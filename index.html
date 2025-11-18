@@ -1,300 +1,604 @@
 ﻿<!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bruno Silveira - Desarrollador Full Stack & AI</title>
+    <meta name="description"
+        content="Portfolio de Bruno Silveira - Desarrollador Full Stack & AI. Especialista en soluciones tecnológicas modernas, LLMs y desarrollo web.">
+    <meta property="og:title" content="Bruno Silveira - Portfolio">
+    <meta property="og:description" content="Desarrollador Full Stack & AI. Explorando el futuro de la tecnología.">
+    <meta property="og:type" content="website">
+    <title>Bruno Silveira | Full Stack & AI Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
-        /* Basic Reset */
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #ffffff;
+            --text-color: #1f2937;
+            --text-secondary: #4b5563;
+            --card-bg: #f3f4f6;
+            --card-border: #e5e7eb;
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --hero-gradient: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            --accent-color: #3b82f6;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #60a5fa;
+            --primary-hover: #93c5fd;
+            --bg-color: #0f172a;
+            --text-color: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --card-bg: #1e293b;
+            --card-border: #334155;
+            --nav-bg: rgba(15, 23, 42, 0.9);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
+            --hero-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --accent-color: #38bdf8;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            background-color: #ffffff;
-            padding: 30px 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.2s;
         }
 
-        header {
+        a:hover {
+            color: var(--primary-hover);
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-color);
+            padding: 0.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--card-border);
+        }
+
+        .theme-toggle svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 30px;
+            padding: 4rem 2rem;
+            background: var(--hero-gradient);
         }
 
-        header h1 {
-            font-size: 2.8em;
-            color: #2c3e50;
-            margin-bottom: 10px;
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
         }
 
-        header .subtitle {
-            font-size: 1.2em;
-            color: #555;
-            font-weight: 300;
-            margin-bottom: 15px;
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            display: block;
         }
 
-        header .location-education {
-             font-size: 1em;
-             color: #777;
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         h2 {
-            font-size: 1.8em;
-            color: #34495e;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 8px;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--text-color);
         }
 
-        p, ul {
-            margin-bottom: 15px;
-            color: #444;
+        /* About */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
         }
 
-        ul {
-            list-style: none; /* Changed from disc to none for project list */
-            padding-left: 0; /* Remove default padding */
-        }
-
-        li {
-            background-color: #fdfdfd;
-            border: 1px solid #eee;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            transition: background-color 0.2s ease-in-out;
-        }
-
-        li:hover {
-             background-color: #f1f1f1;
-        }
-
-        li strong {
-            color: #2980b9;
-            display: block; /* Make project title stand out */
-            margin-bottom: 5px;
-            font-size: 1.1em;
-        }
-
-        li span.tech, li span.status {
-            font-size: 0.9em;
-            color: #666;
-            display: block; /* Ensure tech stack is on new line */
-            margin-top: 5px;
-        }
-
-         li span.status {
-            font-style: italic;
-            color: #888;
-         }
-         span.status {
-            font-size: 0.9em;
-            display: block; /* Ensure tech stack is on new line */
-            margin-top: 5px;
-            font-style: italic;
-            color: #888;
-        }
-
-        strong, b {
-            font-weight: 600;
+        .about-content p {
+            margin-bottom: 1.5rem;
         }
 
         code {
-          background-color: #eef;
-          padding: 2px 5px;
-          border-radius: 3px;
-          font-family: "Courier New", Courier, monospace;
-          font-size: 0.95em;
-        }
-
-        .highlight {
-            color: #e67e22; /* Use an accent color for specific skills */
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #e0e0e0;
+            background-color: var(--card-border);
+            color: var(--primary-color);
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
             font-size: 0.9em;
-            color: #888;
+            font-family: monospace;
         }
 
-        /* Responsive adjustments */
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .project-status {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 1rem;
+            background-color: var(--card-border);
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .tech-tag {
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            background-color: rgba(37, 99, 235, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--card-bg);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--card-border);
+            margin-top: 4rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
         @media (max-width: 768px) {
-            .container {
-                padding: 20px 25px;
-                margin: 20px auto;
+            .hero h1 {
+                font-size: 2.5rem;
             }
-            header h1 {
-                font-size: 2.2em;
-            }
-            header .subtitle {
-                font-size: 1.1em;
-            }
-            h2 {
-                font-size: 1.6em;
-            }
-        }
-         @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-             .container {
-                padding: 15px 20px;
-                margin: 10px auto;
-            }
-            header h1 {
-                font-size: 1.9em;
-            }
-            header .subtitle {
-                font-size: 1em;
-            }
-            h2 {
-                font-size: 1.4em;
-            }
-             li {
-                 padding: 12px;
-             }
-        }
 
+            .nav-links {
+                display: none;
+                /* Simplify for now, could add mobile menu JS */
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
     </style>
-    <!-- No external JavaScript needed for this static page -->
 </head>
+
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Bruno Silveira</h1>
-            <p class="subtitle">Desarrollador Full Stack | IA</p>
-            <p class="location-education">📍 Uruguay | Licenciado en Tecnologías de la Información (UTEC)</p>
-        </header>
+    <nav>
+        <a href="#" class="logo">Bruno Silveira</a>
+        <div class="nav-links">
+            <a href="#about">Sobre mí</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#contact">Contacto</a>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
+                <!-- Sun Icon -->
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display: none;">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <!-- Moon Icon -->
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
 
-        <main>
-            <section id="about">
-                <h2>Sobre mí</h2>
+    <main>
+        <section id="hero" class="hero">
+            <h1>Desarrollador Full Stack & AI</h1>
+            <span class="hero-subtitle">Licenciado en Tecnologías de la Información (UTEC)</span>
+            <p>Creando soluciones digitales modernas, escalables y potenciadas por Inteligencia Artificial.</p>
+            <a href="#projects" class="btn">Ver Proyectos</a>
+        </section>
+
+        <section id="about">
+            <h2>Sobre mí</h2>
+            <div class="about-content">
                 <p>
-                    Actualmente me desempeño en el <strong>Banco de Previsión Social (BPS)</strong>, donde aporto a procesos de modernización digital e implementación de soluciones (backend, services SOAP & REST). Combino mi experiencia en <strong>backend</strong>, <strong>frontend</strong> y <strong>machine learning</strong> para crear y mantener herramientas eficientes y centradas en el usuario.
+                    Actualmente me desempeño en el <strong>Banco de Previsión Social (BPS)</strong>, donde aporto a
+                    procesos de modernización digital e implementación de soluciones. Combino mi experiencia en
+                    <strong>backend</strong>, <strong>frontend</strong> y <strong>machine learning</strong> para crear
+                    herramientas eficientes.
                 </p>
                 <p>
-                    Tengo conocimiento avanzado en el uso de modelos de lenguaje (<strong class="highlight">LLM</strong>) mediante APIs como <code>OpenAI</code>, <code>Anthropic</code>, <code>Google</code>, implementación de flujos <strong class="highlight">RAG</strong> (retrieval-augmented generation), vectorización de datos con bases como <code>ChromaDB</code>, <code>Pinecone</code> o <code>GraphRAG</code>, y técnicas de anonimización usando herramientas como <code>Microsoft Presidio</code> para el tratamiento responsable de datos sensibles.
+                    Tengo conocimiento avanzado en el uso de modelos de lenguaje (<strong>LLM</strong>) mediante APIs
+                    como <code>OpenAI</code>, <code>Anthropic</code> y <code>Google</code>, implementación de flujos
+                    <strong>RAG</strong>, y vectorización de datos con <code>ChromaDB</code> o <code>Pinecone</code>.
                 </p>
                 <p>
-                    Mi enfoque se centra en el diseño de soluciones tecnológicas que integren <strong>IA de forma ética y eficiente</strong>, desarrollando productos que sean útiles, escalables y centrados en el usuario. He trabajado en proyectos donde los LLM no solo se integran como asistentes conversacionales, sino como motores de <strong>análisis, clasificación y sugerencias personalizadas</strong> a partir de datos estructurados y no estructurados.
+                    Mi enfoque se centra en el diseño de soluciones tecnológicas que integren <strong>IA de forma ética
+                        y eficiente</strong>, desarrollando productos que sean útiles, escalables y centrados en el
+                    usuario.
                 </p>
-            </section>
+            </div>
+        </section>
 
-            <section id="featured-project">
-                 <h2>Proyecto Destacado: <a href="https://micope.org" target="_blank">MiCope.org</a></h2>
-                <span class="status">(en desarrollo)</span>
-                 <p>
-                    Actualmente estoy desarrollado la platafirma MiCope.org, un sistema diseñado para la gestión de cooperativas de vivienda.
-                 </p>
-                 <p>
-                     MiCope.org fue desarrollada usando tecnologías como <code>Node.js</code>, <code>Express</code>, <code>MongoDB</code>, <code>HTML5</code>, <code>Python</code>, levantado en <code>Azure</code>. Incorpora <strong>Inteligencia Artificial</strong> para brindar ayuda al usuario, reportes mas completos y customizados, mejorando significativamente la experiencia de la plataforma.
-                 </p>
-            </section>
+        <section id="projects">
+            <h2>Proyectos Destacados</h2>
+            <div class="projects-grid">
 
-            <section id="other-projects">
-                <h2>Otros Proyectos Relevantes</h2>
-                <ul>
-                    <li>
-                        <strong><a href="https://lti.uy" target="_blank">HUB LTI UTEC</a></strong>
-                        Plataforma académica para centralizar recursos de estudiantes de la UTEC (Creador).
-                        <span class="status">(Funcionando)</span>
-                    </li>
-                    <li>
-                        <strong>SurLink</strong>
-                        Plataforma digital integral que centraliza la búsqueda de inmuebles, ofertas laborales, estudios terciarios y servicios financieros.
-                        <span class="status">(Proyecto en construcción)</span>
-                    </li>
-                     <li>
-                        <strong><a href="https://maderarealestate.uy/" target="_blank">Madera Real Estate</a></strong>
-                         Sitio inmobiliario desarrollado con <code>Node.js</code>.
-                    </li>
-                     <li>
-                        <strong><a href="https://ghambiental.uy/" target="_blank">G&H Ambiental</a></strong>
-                         Plataforma institucional con blog, landing page y sección de contacto.
-                    </li>
-                    <li>
-                        <strong>CountdowntoAI.com</strong>
-                        Sitio open source que muestra una cuenta regresiva hacia la AGI basada en predicciones de Metaculus.
-                        <span class="tech">Tecnologías: <code>Python</code>, <code>JavaScript</code>.</span>
-                        <span class="status">(1 año en producción, cancelado por falta de fondos)</span>
-                    </li>
-                     <li>
-                        <strong>Road to AGI</strong>
+                <!-- Coopnet -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <a href="https://coopnet.uy" target="_blank" class="project-title">Coopnet.uy</a>
+                        <span class="project-status">En producción</span>
+                    </div>
+                    <p class="project-desc">
+                        Plataforma líder para la gestión integral de cooperativas de vivienda en Uruguay. Anteriormente
+                        conocida como MiCope.org, ahora ofrece una solución completa para administración, finanzas y
+                        gestión de socios.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">AI</span>
+                    </div>
+                </article>
+
+                <!-- Vortex Labs -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <a href="https://vortexlabs.cc" target="_blank" class="project-title">Vortex Labs</a>
+                        <span class="project-status">Activo</span>
+                    </div>
+                    <p class="project-desc">
+                        Vortexlabs es una empresa de hub de informacion para LATAM (con base en Uruguay).
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Software Development</span>
+                        <span class="tech-tag">Web Apps</span>
+                        <span class="tech-tag">Mobile Games</span>
+                    </div>
+                </article>
+
+                <!-- HUB LTI -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <a href="https://lti.uy" target="_blank" class="project-title">HUB LTI UTEC</a>
+                        <span class="project-status">Funcionando</span>
+                    </div>
+                    <p class="project-desc">
+                        Plataforma académica centralizada para recursos de estudiantes de la UTEC.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Web Platform</span>
+                        <span class="tech-tag">Education</span>
+                    </div>
+                </article>
+
+                <!-- SurLink -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-title">SurLink</span>
+                        <span class="project-status">En construcción</span>
+                    </div>
+                    <p class="project-desc">
+                        Plataforma digital integral que centraliza la búsqueda de inmuebles, ofertas laborales, estudios
+                        terciarios y servicios financieros.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Marketplace</span>
+                        <span class="tech-tag">Services</span>
+                    </div>
+                </article>
+
+                <!-- Madera Real Estate -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <a href="https://maderarealestate.uy/" target="_blank" class="project-title">Madera Real
+                            Estate</a>
+                        <span class="project-status">Activo</span>
+                    </div>
+                    <p class="project-desc">
+                        Sitio inmobiliario moderno y dinámico.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Real Estate</span>
+                    </div>
+                </article>
+
+                <!-- G&H Ambiental -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <a href="https://ghambiental.uy/" target="_blank" class="project-title">G&H Ambiental</a>
+                        <span class="project-status">Activo</span>
+                    </div>
+                    <p class="project-desc">
+                        Plataforma institucional con blog, landing page y sección de contacto para empresa ambiental.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Web</span>
+                        <span class="tech-tag">Corporate</span>
+                    </div>
+                </article>
+
+                <!-- CountdowntoAI -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-title">CountdowntoAI.com</span>
+                        <span class="project-status">Archivado</span>
+                    </div>
+                    <p class="project-desc">
+                        Sitio open source con cuenta regresiva hacia la AGI basada en predicciones de Metaculus.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">JS</span>
+                    </div>
+                </article>
+
+                <!-- Road to AGI -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-title">Road to AGI</span>
+                        <span class="project-status">Archivado</span>
+                    </div>
+                    <p class="project-desc">
                         GUI en Python para interactuar con modelos GPT-3, 3.5 y 4 a través de la API de OpenAI.
-                        <span class="tech">Tecnologías: <code>Python</code>, <code>OpenAI API</code>.</span>
-                    </li>
-                     <li>
-                        <strong><a href="https://x.com/dolar_uruguay" target="_blank">Bot del Dólar en Uruguay</a></strong>
-                        Bot automatizado que publica el tipo de cambio diariamente en X (Twitter).
-                        <span class="tech">Tecnologías: Automatización, APIs.</span>
-                        <span class="status">(Proyecto cancelado por cambios en los términos y condiciones de X)</span>
-                    </li>
-                    <li>
-                        <strong>IAGRO</strong>
-                         Solución universitaria de gestión agrícola con aplicaciones web y móvil.
-                         <span class="tech">Tecnologías: <code>Java/JSF</code> (Web), <code>Android</code> (Móvil).</span>
-                    </li>
-                    <li>
-                        <strong>Capitaliza Consultora</strong>
-                        Sistema de RRHH desarrollado sobre SQL.
-                        <span class="status">(Proyecto cancelado)</span>
-                    </li>
-                     <li>
-                        <strong>Year Progress Bar</strong>
-                        Bot visual diario automatizado (sin usar la API oficial de Twitter).
-                        <span class="status">(Proyecto cancelado)</span>
-                    </li>
-                </ul>
-            </section>
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenAI API</span>
+                    </div>
+                </article>
 
-            <section id="summary">
-                 <h2>Resumen</h2>
-                 <p>
-                    Mi trayectoria combina <strong>desarrollo de software</strong>, <strong>automatización</strong>, <strong>IA aplicada</strong> y <strong>diseño de soluciones digitales</strong> enfocadas en mejorar la experiencia del usuario y optimizar procesos en contextos reales, tanto en el sector público, privado y en proyectos personales y colaborativos.
-                 </p>
-            </section>
+            </div>
+        </section>
 
-        </main>
+        <section id="summary">
+            <h2>Resumen</h2>
+            <div class="about-content">
+                <p style="text-align: center;">
+                    Mi trayectoria combina <strong>desarrollo de software</strong>, <strong>automatización</strong>,
+                    <strong>IA aplicada</strong> y <strong>diseño de soluciones digitales</strong> enfocadas en mejorar
+                    la experiencia del usuario y optimizar procesos en contextos reales.
+                </p>
+            </div>
+        </section>
+    </main>
 
-        <footer>
-            <p>2025 - Bruno Silveira -</p>
-        </footer>
-    </div>
+    <footer id="contact">
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/bruno-silveira-730107a7/" target="_blank">LinkedIn</a>
+            <a href="mailto:contacto@brunosilveira.uy">Email</a>
+        </div>
+        <p>&copy; 2025 Bruno Silveira. Todos los derechos reservados.</p>
+    </footer>
 
-    <!-- No external JavaScript file linked, as per the request for a single file -->
     <script>
-        // Simple example: Log to console when the page loads
-        // No interactive features added based on the initial request,
-        // but JavaScript can be added here if needed.
-        console.log("THIS IS ME : https://www.linkedin.com/in/bruno-silveira-730107a7/");
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        const sunIcon = document.querySelector('.sun-icon');
+        const moonIcon = document.querySelector('.moon-icon');
 
-        // You could add more complex JS here later, for example:
-        // - Filtering projects by technology
-        // - Adding simple animations on scroll
-        // - Implementing a contact form handler (though that would typically require backend)
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        updateIcons(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcons(newTheme);
+        });
+
+        function updateIcons(theme) {
+            if (theme === 'dark') {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            } else {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            }
+        }
+
+        // Smooth Scroll for Anchor Links (Polyfill-like behavior if needed, but CSS handles most)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Offset for sticky header
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
     </script>
-
 </body>
+
 </html>
