@@ -404,35 +404,6 @@ h1.display .und{text-decoration:underline;text-decoration-color:var(--neon);text
   repeating-linear-gradient(45deg,transparent 0,transparent 6px,rgba(0,255,65,.05) 6px,rgba(0,255,65,.05) 7px);
 }
 
-/* ============ AXIOMS / PRINCIPLES ============ */
-.axioms{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line-2)}
-.axioms .lead{
-  padding:48px 32px;border-right:1px solid var(--line-2);position:relative;
-  background:
-    linear-gradient(#000,#000),
-    repeating-linear-gradient(-45deg,var(--neon) 0,var(--neon) 1px,transparent 1px,transparent 22px);
-}
-.axioms .lead::before{
-  content:"";position:absolute;inset:0;
-  background:repeating-linear-gradient(-45deg,transparent 0,transparent 40px,rgba(0,255,65,.03) 40px,rgba(0,255,65,.03) 41px);
-  pointer-events:none;
-}
-.axioms .lead h2{
-  font-family:var(--display);font-weight:600;
-  font-size:clamp(36px,5vw,64px);letter-spacing:-.03em;line-height:.95;margin-bottom:28px;position:relative;
-}
-.axioms .lead h2 em{color:var(--neon);font-style:italic}
-.axioms .lead .ax-kicker{font-size:10px;letter-spacing:.3em;color:var(--neon);margin-bottom:12px}
-.axioms .lead .ax-note{font-size:12px;color:var(--ink-dim);max-width:420px;line-height:1.6;position:relative}
-
-.axioms .grid2{display:grid;grid-template-columns:1fr 1fr}
-.ax{padding:26px 22px;border-left:1px solid var(--line-2);border-bottom:1px solid var(--line-2);min-height:200px;position:relative}
-.ax:nth-child(n+3){border-bottom:none}
-.ax .ax-n{font-family:var(--pixel);font-size:48px;line-height:.8;color:var(--neon);margin-bottom:10px}
-.ax h4{font-family:var(--display);font-size:20px;font-weight:600;margin-bottom:10px;letter-spacing:-.01em}
-.ax p{font-size:12px;color:var(--ink-dim);line-height:1.6}
-.ax::after{content:"▲";position:absolute;top:12px;right:12px;font-size:10px;color:var(--neon)}
-
 /* ============ TIMELINE / EXPERIENCE ============ */
 .experience{padding:48px 32px;border-bottom:1px solid var(--line-2)}
 .exp-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;gap:24px;flex-wrap:wrap}
@@ -546,7 +517,7 @@ body[data-accent="amber"]{--neon:#ffb300;--neon-dim:#8a6a00;--neon-ghost:rgba(25
 body[data-accent="red"]{--neon:#ff2d2d;--neon-dim:#8a1818;--neon-ghost:rgba(255,45,45,.12)}
 body[data-accent="cyan"]{--neon:#00e5ff;--neon-dim:#0077aa;--neon-ghost:rgba(0,229,255,.12)}
 body[data-density="tight"] .hero-main{padding:28px 22px 22px}
-body[data-density="tight"] .manifesto .body,body[data-density="tight"] .axioms .lead,body[data-density="tight"] .demo-text,body[data-density="tight"] .experience{padding:28px 22px}
+body[data-density="tight"] .manifesto .body,body[data-density="tight"] .demo-text,body[data-density="tight"] .experience{padding:28px 22px}
 body[data-density="tight"] .co{padding:18px 18px;min-height:180px}
 body[data-grain="off"]{background-image:none}
 body[data-grain="off"]::before{display:none}
@@ -596,9 +567,8 @@ html,body{overflow-x:hidden;max-width:100vw}
   .vert-icons .icon-wall a{max-width:100%}
   .vert-icons .icon-wall img{max-width:100%;height:auto;display:block}
 
-  .axioms,.demo{grid-template-columns:1fr}
-  .axioms .lead,.demo-text{border-right:none;border-bottom:1px solid var(--line-2)}
-  .axioms .grid2{grid-template-columns:1fr 1fr}
+  .demo{grid-template-columns:1fr}
+  .demo-text{border-right:none;border-bottom:1px solid var(--line-2)}
 
   .experience{padding:28px 16px}
   .exp{grid-template-columns:1fr}
@@ -651,7 +621,6 @@ html,body{overflow-x:hidden;max-width:100vw}
       <li><a href="#about"><span class="num">01</span>SOBRE</a></li>
       <li><a href="#stack"><span class="num">02</span>STACK</a></li>
       <li><a href="#projects"><span class="num">03</span>PROYECTOS</a></li>
-      <li><a href="#axioms"><span class="num">04</span>PRINCIPIOS</a></li>
       <li><a href="#experience"><span class="num">05</span>EXPERIENCIA</a></li>
       <li><a href="#terminal"><span class="num">06</span>TERMINAL</a></li>
       <li><a href="#contact"><span class="num">07</span>CONTACTO</a></li>
@@ -980,43 +949,6 @@ a87e:2130:ut3c
       <div><h4><a href="https://www.linkedin.com/in/bruno-silveira-730107a7/" target="_blank" rel="noopener">LinkedIn · Bruno Silveira</a></h4><p class="co-desc">Perfil profesional completo. Historial extendido, recomendaciones, red profesional y oportunidades.</p></div>
       <div class="co-tech"><span>Profile</span><span>Network</span></div>
       <div class="co-meta"><span>TYPE <b>SOCIAL</b></span><span><b>PUB</b></span><span><b>↗</b></span></div>
-    </div>
-  </div>
-</section>
-
-<!-- AXIOMS -->
-<div class="section-mark">
-  <div class="sec">§04 · PRINCIPIOS</div>
-  <div class="tit">Cuatro principios de trabajo</div>
-  <div class="ts">DOC.AXM.04</div>
-</div>
-
-<section class="axioms" id="axioms">
-  <div class="lead">
-    <div class="ax-kicker">// PRINCIPIOS</div>
-    <h2>Cuatro <em>ejes</em><br>de trabajo.</h2>
-    <div class="ax-note">Estas son las reglas con las que intento construir. Las publico como contrato conmigo mismo — y con quien decida trabajar junto.</div>
-  </div>
-  <div class="grid2">
-    <div class="ax">
-      <div class="ax-n">01</div>
-      <h4>Utilidad primero</h4>
-      <p>Herramientas que resuelven un problema real. El código debe servir a la persona, no al contrario. Funcional antes que estético.</p>
-    </div>
-    <div class="ax">
-      <div class="ax-n">02</div>
-      <h4>IA ética</h4>
-      <p>LLMs, RAG y ML aplicados con criterio. Responsabilidad sobre los datos, transparencia sobre los límites, respeto por el usuario final.</p>
-    </div>
-    <div class="ax">
-      <div class="ax-n">03</div>
-      <h4>Raíz local</h4>
-      <p>Construyo desde Uruguay, para LATAM y el mundo. Soluciones que tienen en cuenta la realidad de la región — idioma, economía, contexto.</p>
-    </div>
-    <div class="ax">
-      <div class="ax-n">04</div>
-      <h4>Escalable y simple</h4>
-      <p>Prefiero una arquitectura que un equipo pueda mantener antes que una que impresione. La simplicidad es una feature, no un accidente.</p>
     </div>
   </div>
 </section>
