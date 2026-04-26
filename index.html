@@ -720,7 +720,7 @@ html,body{overflow-x:hidden;max-width:100vw}
 
 <!-- ABOUT -->
 <div class="section-mark">
-  <div class="sec"><span data-es>§01 · SOBRE</span><span data-en>§01 · ABOUT</span></div>
+  <div class="sec"><span data-es>01 · SOBRE</span><span data-en>01 · ABOUT</span></div>
   <div class="tit"><span data-es>Quién está detrás de la máquina</span><span data-en>Who's behind the machine</span></div>
   <div class="ts">DOC.BIO.01</div>
 </div>
@@ -759,7 +759,7 @@ a87e:2130:ut3c
 
 <!-- STACK / VERTICALS -->
 <div class="section-mark">
-  <div class="sec">§02 · STACK</div>
+  <div class="sec">02 · STACK</div>
   <div class="tit"><span data-es>Cuatro ejes de trabajo</span><span data-en>Four pillars of work</span></div>
   <div class="ts">CAT.4X</div>
 </div>
@@ -785,7 +785,7 @@ a87e:2130:ut3c
 
 <!-- PROJECTS -->
 <div class="section-mark">
-  <div class="sec"><span data-es>§03 · PROYECTOS</span><span data-en>§03 · PROJECTS</span></div>
+  <div class="sec"><span data-es>03 · PROYECTOS</span><span data-en>03 · PROJECTS</span></div>
   <div class="tit"><span data-es>Siete iniciativas en producción</span><span data-en>Seven initiatives in production</span></div>
   <div class="ts">IDX.07</div>
 </div>
@@ -972,7 +972,7 @@ a87e:2130:ut3c
 
 <!-- EXPERIENCE -->
 <div class="section-mark">
-  <div class="sec"><span data-es>§05 · EXPERIENCIA</span><span data-en>§05 · EXPERIENCE</span></div>
+  <div class="sec"><span data-es>05 · EXPERIENCIA</span><span data-en>05 · EXPERIENCE</span></div>
   <div class="tit"><span data-es>Trayectoria profesional</span><span data-en>Professional track record</span></div>
   <div class="ts">CV.TIMELINE</div>
 </div>
@@ -1030,7 +1030,7 @@ a87e:2130:ut3c
 
 <!-- EDUCATION -->
 <div class="section-mark">
-  <div class="sec"><span data-es>§05B · EDUCACIÓN</span><span data-en>§05B · EDUCATION</span></div>
+  <div class="sec"><span data-es>05B · EDUCACIÓN</span><span data-en>05B · EDUCATION</span></div>
   <div class="tit"><span data-es>Formación académica</span><span data-en>Academic background</span></div>
   <div class="ts">EDU.INDEX</div>
 </div>
@@ -1058,7 +1058,7 @@ a87e:2130:ut3c
 
 <!-- TERMINAL DEMO -->
 <div class="section-mark">
-  <div class="sec">§06 · INTERFACE</div>
+  <div class="sec">06 · INTERFACE</div>
   <div class="tit"><span data-es>Hablá con la terminal</span><span data-en>Talk to the terminal</span></div>
   <div class="ts">SHELL.v1</div>
 </div>
@@ -1574,6 +1574,43 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     ctx.globalAlpha=1;
   }
 
+  // Async-load land coastlines (Natural Earth 110m) for continent silhouettes
+  let landFeatures=null;
+  (async()=>{
+    try{
+      if(!window.topojson){
+        await new Promise((res,rej)=>{
+          const s=document.createElement('script');
+          s.src='https://unpkg.com/topojson-client@3/dist/topojson-client.min.js';
+          s.onload=res; s.onerror=rej; document.head.appendChild(s);
+        });
+      }
+      const r=await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json');
+      const topo=await r.json();
+      const land=window.topojson.feature(topo, topo.objects.land);
+      landFeatures=land.features;
+    }catch(e){/* fallback: show graticule */}
+  })();
+
+  function drawContinentRing(ring){
+    // ring: [[lon,lat], ...] in degrees
+    let prev=null;
+    ctx.beginPath();
+    let started=false;
+    for(let i=0;i<ring.length;i++){
+      const [lonD,latD]=ring[i];
+      const p=project(latD*D2R, lonD*D2R);
+      if(p.z>0){
+        if(!started){ctx.moveTo(p.x,p.y); started=true;}
+        else ctx.lineTo(p.x,p.y);
+      }else{
+        if(started){ctx.stroke(); ctx.beginPath(); started=false;}
+      }
+      prev=p;
+    }
+    if(started) ctx.stroke();
+  }
+
   function tick(){
     ctx.clearRect(0,0,SIZE,SIZE);
     ctx.lineWidth=1;
@@ -1584,15 +1621,33 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     ctx.arc(cx,cy,R,0,2*Math.PI);
     ctx.stroke();
     ctx.globalAlpha=1;
-    // latitudes
-    for(let lat=-60;lat<=60;lat+=20){
-      const latR=lat*D2R;
-      strokeArc(t=>project(latR,t),48);
-    }
-    // longitudes
-    for(let i=0;i<6;i++){
-      const lonOffset=i*Math.PI/6;
-      strokeArc(t=>project(t-Math.PI/2,lonOffset),48);
+    if(landFeatures){
+      // Continent silhouettes
+      ctx.strokeStyle=C_LINE;
+      ctx.globalAlpha=.85;
+      ctx.lineWidth=1;
+      for(const f of landFeatures){
+        const geom=f.geometry;
+        if(geom.type==='Polygon'){
+          for(const ring of geom.coordinates) drawContinentRing(ring);
+        }else if(geom.type==='MultiPolygon'){
+          for(const poly of geom.coordinates)
+            for(const ring of poly) drawContinentRing(ring);
+        }
+      }
+      ctx.globalAlpha=1;
+    }else{
+      // Fallback graticule while loading
+      ctx.globalAlpha=.4;
+      for(let lat=-60;lat<=60;lat+=30){
+        const latR=lat*D2R;
+        strokeArc(t=>project(latR,t),36);
+      }
+      for(let i=0;i<4;i++){
+        const lonOffset=i*Math.PI/4;
+        strokeArc(t=>project(t-Math.PI/2,lonOffset),36);
+      }
+      ctx.globalAlpha=1;
     }
     // MVD marker
     const m=project(MVD_LAT,MVD_LON);
