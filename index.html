@@ -365,12 +365,30 @@ h1.display .und{text-decoration:underline;text-decoration-color:var(--neon);text
   font-size:10px;letter-spacing:.1em;color:var(--ink-dim);
 }
 .co .co-meta b{color:var(--ink)}
-.co .glitch-id{position:absolute;top:10px;right:12px;font-size:8px;color:var(--ink-dimmer);font-family:var(--mono);letter-spacing:.15em}
-.co .ascii-sigil{
-  position:absolute;bottom:18px;right:18px;font-size:9px;line-height:1;
-  color:var(--neon-dim);white-space:pre;opacity:.6;font-family:var(--mono);
+.co .glitch-id{position:absolute;top:10px;right:12px;font-size:8px;color:var(--ink-dimmer);font-family:var(--mono);letter-spacing:.15em;z-index:2}
+.co-thumb{
+  display:flex;align-items:center;justify-content:center;
+  height:96px;
+  margin:-26px -24px 16px;
+  border-bottom:1px solid var(--line-2);
+  background:
+    linear-gradient(180deg,rgba(0,255,65,.04),rgba(0,255,65,0) 70%),
+    repeating-linear-gradient(45deg,transparent 0,transparent 6px,rgba(0,255,65,.025) 6px,rgba(0,255,65,.025) 7px);
+  position:relative;
+  transition:background .2s,color .2s;
+  color:var(--ink-dim);
 }
-.co:hover .ascii-sigil{color:var(--neon);opacity:1}
+.co-thumb::after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--neon-ghost),transparent);
+  opacity:.6;
+}
+.co-thumb svg{width:64px;height:64px;color:inherit;display:block}
+.co-thumb svg .accent{stroke:var(--neon)}
+.co:hover .co-thumb{color:var(--ink);background:
+  linear-gradient(180deg,rgba(0,255,65,.08),rgba(0,255,65,0) 70%),
+  repeating-linear-gradient(45deg,transparent 0,transparent 6px,rgba(0,255,65,.05) 6px,rgba(0,255,65,.05) 7px);
+}
 
 /* ============ AXIOMS / PRINCIPLES ============ */
 .axioms{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line-2)}
@@ -769,102 +787,171 @@ a87e:2130:ut3c
 
   <div class="grid9">
     <div class="co">
+      <div class="co-thumb" aria-hidden="true">
+        <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 36 L40 14 L66 36"/>
+          <path d="M20 34 V64 H60 V34"/>
+          <path class="accent" d="M34 64 V48 H46 V64"/>
+          <circle cx="40" cy="42" r="3.5" class="accent"/>
+          <path d="M28 24 V18 H34 V20" opacity=".55"/>
+        </svg>
+      </div>
       <div class="glitch-id">ID:0x01 · CPN</div>
       <div class="co-head"><span class="code">/01 · COOPNET</span><span class="kind prod">PROD</span></div>
       <div><h4><a href="https://coopnet.uy" target="_blank" rel="noopener">Coopnet.uy</a></h4><p class="co-desc">Plataforma líder para gestión integral de cooperativas de vivienda en Uruguay. Anteriormente MiCope.org — ahora una solución completa para administración, finanzas y gestión de socios.</p></div>
       <div class="co-tech"><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Azure</span><span>AI</span></div>
       <div class="co-meta"><span>STATUS <b>LIVE</b></span><span>STACK <b>NODE</b></span><span><b>UY</b></span></div>
-      <pre class="ascii-sigil">┌───┐
-│ ▓ │
-└───┘</pre>
     </div>
 
     <div class="co">
+      <div class="co-thumb" aria-hidden="true">
+        <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="40" cy="40" r="4" class="accent" fill="currentColor" stroke="none" opacity=".0"/>
+          <circle cx="40" cy="40" r="3.5" class="accent"/>
+          <path d="M40 26 A14 14 0 0 1 54 40" opacity=".85"/>
+          <path d="M40 18 A22 22 0 0 1 62 40" opacity=".55"/>
+          <path d="M40 10 A30 30 0 0 1 70 40" opacity=".3"/>
+          <path class="accent" d="M40 40 L66 14" opacity=".7"/>
+          <circle cx="66" cy="14" r="2" class="accent" fill="currentColor"/>
+        </svg>
+      </div>
       <div class="glitch-id">ID:0x02 · AUS</div>
       <div class="co-head"><span class="code">/02 · AUSTRA</span><span class="kind active">ACT</span></div>
       <div><h4><a href="https://austra.cc" target="_blank" rel="noopener">Austra.cc</a></h4><p class="co-desc">Hub de información y servicios tecnológicos para LATAM con base en Uruguay. Software, web apps y mobile games.</p></div>
       <div class="co-tech"><span>Software</span><span>Web</span><span>Mobile</span></div>
       <div class="co-meta"><span>SCOPE <b>LATAM</b></span><span>BASE <b>UY</b></span><span><b>ACT</b></span></div>
-      <pre class="ascii-sigil"> ___
-[ ◉ ]
- ‾‾‾</pre>
     </div>
 
     <div class="co">
+      <div class="co-thumb" aria-hidden="true">
+        <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 22 Q26 18 40 24 Q54 18 70 22 V60 Q54 56 40 62 Q26 56 10 60 Z"/>
+          <path d="M40 24 V62" class="accent"/>
+          <path d="M16 30 Q26 27 36 31" opacity=".55"/>
+          <path d="M16 38 Q26 35 36 39" opacity=".55"/>
+          <path d="M16 46 Q26 43 36 47" opacity=".4"/>
+          <path d="M44 30 Q54 27 64 31" opacity=".55"/>
+          <path d="M44 38 Q54 35 64 39" opacity=".55"/>
+          <path d="M44 46 Q54 43 64 47" opacity=".4"/>
+        </svg>
+      </div>
       <div class="glitch-id">ID:0x03 · LTI</div>
       <div class="co-head"><span class="code">/03 · LTI.UY</span><span class="kind active">ACT</span></div>
       <div><h4><a href="https://lti.uy" target="_blank" rel="noopener">LTI.uy</a></h4><p class="co-desc">Plataforma académica centralizada para recursos de estudiantes de la Universidad Tecnológica (UTEC).</p></div>
       <div class="co-tech"><span>Web Platform</span><span>Education</span></div>
       <div class="co-meta"><span>ORG <b>UTEC</b></span><span>USERS <b>STUDENT</b></span><span><b>EDU</b></span></div>
-      <pre class="ascii-sigil">▛▀▜
-▌·▐
-▙▄▟</pre>
     </div>
 
     <div class="co">
+      <div class="co-thumb" aria-hidden="true">
+        <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 64 V32 H42 V64 Z"/>
+          <path d="M22 40 H26 M30 40 H34 M22 48 H26 M30 48 H34 M22 56 H26 M30 56 H34"/>
+          <path d="M14 32 L28 20 L42 32"/>
+          <path class="accent" d="M58 64 V44"/>
+          <path class="accent" d="M58 44 L52 38 M58 44 L64 36 M58 50 L52 46 M58 50 L66 44"/>
+          <path d="M50 64 H68" opacity=".5"/>
+        </svg>
+      </div>
       <div class="glitch-id">ID:0x04 · MDR</div>
       <div class="co-head"><span class="code">/04 · MADERA</span><span class="kind active">ACT</span></div>
       <div><h4><a href="https://maderarealestate.uy/" target="_blank" rel="noopener">Madera Real Estate</a></h4><p class="co-desc">Sitio inmobiliario moderno y dinámico para operaciones en Uruguay.</p></div>
       <div class="co-tech"><span>Node.js</span><span>Real Estate</span></div>
       <div class="co-meta"><span>SECTOR <b>RE</b></span><span>STACK <b>NODE</b></span><span><b>UY</b></span></div>
-      <pre class="ascii-sigil">/\__/\
-|    |
-‾‾‾‾‾‾</pre>
     </div>
 
     <div class="co">
+      <div class="co-thumb" aria-hidden="true">
+        <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 56 C22 36 36 22 58 22 C58 44 44 58 22 58 Z"/>
+          <path d="M58 22 L24 56" opacity=".55"/>
+          <path d="M44 30 L36 38 M50 36 L42 44 M38 36 L32 42" opacity=".4"/>
+          <path class="accent" d="M62 44 C62 50 58 54 58 54 C58 54 54 50 54 44 C54 41 56 38 58 38 C60 38 62 41 62 44 Z" fill="rgba(0,255,65,.08)"/>
+        </svg>
+      </div>
       <div class="glitch-id">ID:0x05 · GHA</div>
       <div class="co-head"><span class="code">/05 · G&H</span><span class="kind active">ACT</span></div>
       <div><h4><a href="https://ghambiental.uy/" target="_blank" rel="noopener">G&amp;H Ambiental</a></h4><p class="co-desc">Plataforma institucional con blog, landing page y sección de contacto para una empresa del sector ambiental.</p></div>
       <div class="co-tech"><span>Web</span><span>Corporate</span><span>CMS</span></div>
       <div class="co-meta"><span>SECTOR <b>ENV</b></span><span>TYPE <b>CORP</b></span><span><b>UY</b></span></div>
-      <pre class="ascii-sigil"> \|/
- -◉-
- /|\</pre>
     </div>
 
     <div class="co">
+      <div class="co-thumb" aria-hidden="true">
+        <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 14 H58"/>
+          <path d="M22 66 H58"/>
+          <path d="M24 14 V20 L40 40 L24 60 V66"/>
+          <path d="M56 14 V20 L40 40 L56 60 V66"/>
+          <path class="accent" d="M30 18 H50 L42 30 Q40 32 38 30 Z" fill="rgba(0,255,65,.18)"/>
+          <path class="accent" d="M32 62 H48 L42 52 Q40 50 38 52 Z" fill="rgba(0,255,65,.35)"/>
+          <circle cx="40" cy="40" r="1.2" class="accent" fill="currentColor"/>
+          <circle cx="40" cy="46" r="0.8" opacity=".7"/>
+        </svg>
+      </div>
       <div class="glitch-id">ID:0x06 · CTA</div>
       <div class="co-head"><span class="code">/06 · COUNTDOWN</span><span class="kind active">ACT</span></div>
       <div><h4><a href="https://countdowntoai.com" target="_blank" rel="noopener">CountdowntoAI.com</a></h4><p class="co-desc">Sitio open source con cuenta regresiva hacia la AGI basada en predicciones de Metaculus y agregadores de forecasts.</p></div>
       <div class="co-tech"><span>Python</span><span>JS</span><span>Open Source</span></div>
       <div class="co-meta"><span>OPEN <b>YES</b></span><span>TOPIC <b>AGI</b></span><span><b>WEB</b></span></div>
-      <pre class="ascii-sigil">[≡≡≡]
- ▓▓▓
- ···</pre>
     </div>
 
     <div class="co">
+      <div class="co-thumb" aria-hidden="true">
+        <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="12" y="14" width="56" height="52" rx="2"/>
+          <path d="M12 24 H68"/>
+          <circle cx="18" cy="19" r="1.4" fill="currentColor" stroke="none" opacity=".7"/>
+          <circle cx="23" cy="19" r="1.4" fill="currentColor" stroke="none" opacity=".5"/>
+          <circle cx="28" cy="19" r="1.4" fill="currentColor" stroke="none" opacity=".5"/>
+          <path class="accent" d="M30 58 L40 36 L46 58"/>
+          <path class="accent" d="M34 36 Q38 34 40 36"/>
+          <path class="accent" d="M40 36 L50 58" opacity=".7"/>
+        </svg>
+      </div>
       <div class="glitch-id">ID:0x07 · PYG</div>
       <div class="co-head"><span class="code">/07 · PY-GUI</span><span class="kind archived">ARCH</span></div>
       <div><h4>Python GUI for LLMs</h4><p class="co-desc">GUI en Python para interactuar con modelos GPT-3, 3.5 y 4 vía la API de OpenAI. Proyecto archivado — pionero personal en LLMs.</p></div>
       <div class="co-tech"><span>Python</span><span>OpenAI API</span><span>Tkinter</span></div>
       <div class="co-meta"><span>STATUS <b>ARCHIVED</b></span><span>YEAR <b>2023</b></span><span><b>HIST</b></span></div>
-      <pre class="ascii-sigil">╔═══╗
-║ λ ║
-╚═══╝</pre>
     </div>
 
     <div class="co">
+      <div class="co-thumb" aria-hidden="true">
+        <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16 V64"/>
+          <path d="M22 32 Q22 40 32 40 Q42 40 42 50 V64"/>
+          <path d="M22 24 Q22 30 32 30" opacity=".5"/>
+          <path d="M58 26 Q58 36 48 36 Q42 36 42 44" opacity=".7"/>
+          <circle cx="22" cy="16" r="4"/>
+          <circle cx="22" cy="64" r="4"/>
+          <circle cx="42" cy="64" r="4" class="accent" fill="rgba(0,255,65,.18)"/>
+          <circle cx="58" cy="22" r="4" class="accent"/>
+        </svg>
+      </div>
       <div class="glitch-id">ID:0x08 · GH</div>
       <div class="co-head"><span class="code">/08 · SOURCE</span><span class="kind org">ORG</span></div>
       <div><h4><a href="https://github.com/missingus3r" target="_blank" rel="noopener">GitHub · missingus3r</a></h4><p class="co-desc">Código público, experimentos, prototipos y el portfolio propio. Fuente firmada y versionada.</p></div>
       <div class="co-tech"><span>Git</span><span>Open</span><span>Repos</span></div>
       <div class="co-meta"><span>HANDLE <b>missingus3r</b></span><span><b>PUB</b></span><span><b>↗</b></span></div>
-      <pre class="ascii-sigil"> ◆ ◆
-◆ ◇ ◆
- ◆ ◆</pre>
     </div>
 
     <div class="co">
+      <div class="co-thumb" aria-hidden="true">
+        <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="14" y="32" width="22" height="16" rx="8" transform="rotate(-30 25 40)"/>
+          <rect x="44" y="32" width="22" height="16" rx="8" transform="rotate(-30 55 40)" class="accent"/>
+          <path d="M32 42 L48 38" stroke-width="2.4"/>
+          <circle cx="22" cy="60" r="2" fill="currentColor" stroke="none" opacity=".55"/>
+          <path d="M22 64 V70 M28 64 V70 M34 64 V70" opacity=".55"/>
+          <path class="accent" d="M52 60 V70 M58 56 V70 M64 60 V70"/>
+        </svg>
+      </div>
       <div class="glitch-id">ID:0x09 · IN</div>
       <div class="co-head"><span class="code">/09 · LINKEDIN</span><span class="kind org">ORG</span></div>
       <div><h4><a href="https://www.linkedin.com/in/bruno-silveira-730107a7/" target="_blank" rel="noopener">LinkedIn · Bruno Silveira</a></h4><p class="co-desc">Perfil profesional completo. Historial extendido, recomendaciones, red profesional y oportunidades.</p></div>
       <div class="co-tech"><span>Profile</span><span>Network</span></div>
       <div class="co-meta"><span>TYPE <b>SOCIAL</b></span><span><b>PUB</b></span><span><b>↗</b></span></div>
-      <pre class="ascii-sigil">  ▲
- ▲▲▲
-▲▲▲▲▲</pre>
     </div>
   </div>
 </section>
