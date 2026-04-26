@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="htmlroot">
 <head>
 <meta charset="utf-8">
 <title>BRUNO SILVEIRA // FULL_STACK_AI_TERMINAL</title>
@@ -32,6 +32,13 @@
   --pixel:'VT323',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+
+/* ============ I18N TOGGLE ============ */
+body[data-lang="en"] [data-es]{display:none}
+body[data-lang="es"] [data-en]{display:none}
+body:not([data-lang="en"]) [data-en]{display:none}
+.lang-tog span{cursor:pointer;user-select:none}
+
 html,body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:14px;line-height:1.4;overflow-x:hidden}
 body{
   background-image:
@@ -590,7 +597,7 @@ html,body{overflow-x:hidden;max-width:100vw}
 }
 </style>
 </head>
-<body data-accent="green" data-density="regular" data-grain="on">
+<body data-accent="green" data-density="regular" data-grain="on" data-lang="es">
 
 <!-- BOOT -->
 <div id="boot">
@@ -618,23 +625,25 @@ html,body{overflow-x:hidden;max-width:100vw}
       <span class="tag">SILVEIRA · UY</span>
     </div>
     <ul id="navlist">
-      <li><a href="#about"><span class="num">01</span>SOBRE</a></li>
+      <li><a href="#about"><span class="num">01</span><span data-es>SOBRE</span><span data-en>ABOUT</span></a></li>
       <li><a href="#stack"><span class="num">02</span>STACK</a></li>
-      <li><a href="#projects"><span class="num">03</span>PROYECTOS</a></li>
-      <li><a href="#experience"><span class="num">05</span>EXPERIENCIA</a></li>
+      <li><a href="#projects"><span class="num">03</span><span data-es>PROYECTOS</span><span data-en>PROJECTS</span></a></li>
+      <li><a href="#experience"><span class="num">05</span><span data-es>EXPERIENCIA</span><span data-en>EXPERIENCE</span></a></li>
       <li><a href="#terminal"><span class="num">06</span>TERMINAL</a></li>
-      <li><a href="#contact"><span class="num">07</span>CONTACTO</a></li>
+      <li><a href="#contact"><span class="num">07</span><span data-es>CONTACTO</span><span data-en>CONTACT</span></a></li>
     </ul>
     <div class="nav-right">
-      <div class="lang-tog"><span class="on">ES</span></div>
+      <div class="lang-tog" id="lang-tog"><span data-set-lang="es" class="on">ES</span><span data-set-lang="en">EN</span></div>
       <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
   <div class="ticker">
     <div class="ticker-track">
-      <span>▸ <b>COOPNET.UY</b> en producción · <em>+5 años</em> experiencia · <b>BPS</b> modernización digital · <b>C#·.NET</b> · <b>Python</b> · <b>Node.js</b> · <b>LLMs + RAG</b> (OpenAI · Anthropic · Google) · <b>ChromaDB · Pinecone</b> · <b>RPA / UiPath</b> · <b>LTI.UY</b> plataforma académica · <b>AUSTRA.CC</b> hub LATAM · <b>COUNTDOWNTOAI</b> open source · signal: stable ·</span>
-      <span>▸ <b>COOPNET.UY</b> en producción · <em>+5 años</em> experiencia · <b>BPS</b> modernización digital · <b>C#·.NET</b> · <b>Python</b> · <b>Node.js</b> · <b>LLMs + RAG</b> (OpenAI · Anthropic · Google) · <b>ChromaDB · Pinecone</b> · <b>RPA / UiPath</b> · <b>LTI.UY</b> plataforma académica · <b>AUSTRA.CC</b> hub LATAM · <b>COUNTDOWNTOAI</b> open source · signal: stable ·</span>
+      <span data-es>▸ <b>COOPNET.UY</b> en producción · <em>+5 años</em> experiencia · <b>BPS</b> modernización digital · <b>C#·.NET</b> · <b>Python</b> · <b>Node.js</b> · <b>LLMs + RAG</b> (OpenAI · Anthropic · Google) · <b>ChromaDB · Pinecone</b> · <b>RPA / UiPath</b> · <b>LTI.UY</b> plataforma académica · <b>AUSTRA.CC</b> hub LATAM · <b>COUNTDOWNTOAI</b> open source · signal: stable ·</span>
+      <span data-en>▸ <b>COOPNET.UY</b> in production · <em>+5 years</em> experience · <b>BPS</b> digital modernization · <b>C#·.NET</b> · <b>Python</b> · <b>Node.js</b> · <b>LLMs + RAG</b> (OpenAI · Anthropic · Google) · <b>ChromaDB · Pinecone</b> · <b>RPA / UiPath</b> · <b>LTI.UY</b> academic platform · <b>AUSTRA.CC</b> LATAM hub · <b>COUNTDOWNTOAI</b> open source · signal: stable ·</span>
+      <span data-es>▸ <b>COOPNET.UY</b> en producción · <em>+5 años</em> experiencia · <b>BPS</b> modernización digital · <b>C#·.NET</b> · <b>Python</b> · <b>Node.js</b> · <b>LLMs + RAG</b> (OpenAI · Anthropic · Google) · <b>ChromaDB · Pinecone</b> · <b>RPA / UiPath</b> · <b>LTI.UY</b> plataforma académica · <b>AUSTRA.CC</b> hub LATAM · <b>COUNTDOWNTOAI</b> open source · signal: stable ·</span>
+      <span data-en>▸ <b>COOPNET.UY</b> in production · <em>+5 years</em> experience · <b>BPS</b> digital modernization · <b>C#·.NET</b> · <b>Python</b> · <b>Node.js</b> · <b>LLMs + RAG</b> (OpenAI · Anthropic · Google) · <b>ChromaDB · Pinecone</b> · <b>RPA / UiPath</b> · <b>LTI.UY</b> academic platform · <b>AUSTRA.CC</b> LATAM hub · <b>COUNTDOWNTOAI</b> open source · signal: stable ·</span>
     </div>
   </div>
 </div>
@@ -652,20 +661,20 @@ html,body{overflow-x:hidden;max-width:100vw}
     <h1 class="display hero-prompt"><span class="prompt-path">C:\Users\Br1</span><span class="prompt-arrow">&gt;</span><span class="prompt-cmd">whoami</span><span class="prompt-cursor">_</span></h1>
 
     <p class="hero-sub">
-      Soy <b>Bruno Silveira</b>. Técnico Informático · Licenciado en Tecnologías de la Información (UTEC). Construyo soluciones digitales modernas, escalables y potenciadas por <b>Inteligencia Artificial</b> — backend, frontend y flujos de ML aplicados al mundo real.
+      <span data-es>Soy <b>Bruno Silveira</b>. Técnico Informático · Licenciado en Tecnologías de la Información (UTEC). Construyo soluciones digitales modernas, escalables y potenciadas por <b>Inteligencia Artificial</b> — backend, frontend y flujos de ML aplicados al mundo real.</span><span data-en>I'm <b>Bruno Silveira</b>. IT Technician · Bachelor's in Information Technology (UTEC). I build modern, scalable digital solutions powered by <b>Artificial Intelligence</b> — backend, frontend and ML workflows applied to the real world.</span>
     </p>
 
     <div class="cta-row">
-      <a href="#projects" class="btn primary">VER PROYECTOS <span class="arr">→</span></a>
+      <a href="#projects" class="btn primary"><span data-es>VER PROYECTOS</span><span data-en>SEE PROJECTS</span> <span class="arr">→</span></a>
       <a href="https://www.linkedin.com/in/bruno-silveira-730107a7/" target="_blank" rel="noopener" class="btn ghost">/ LINKEDIN</a>
       <a href="mailto:bru94.sil@gmail.com" class="btn ghost">$ SSH BRU94.SIL@GMAIL.COM</a>
     </div>
 
     <div class="hero-stats">
-      <div class="hstat"><div class="k">Proyectos</div><div class="v">07<span class="u">/ACT</span></div><div class="x">en producción / activos</div></div>
-      <div class="hstat"><div class="k">Experiencia</div><div class="v">05<span class="u">YR+</span></div><div class="x">desarrollo & IA</div></div>
-      <div class="hstat"><div class="k">Foco</div><div class="v">AI<span class="u">·ML</span></div><div class="x">LLMs · RAG · auto.</div></div>
-      <div class="hstat"><div class="k">Base</div><div class="v">UY<span class="u">—MVD</span></div><div class="x">Montevideo · remoto</div></div>
+      <div class="hstat"><div class="k"><span data-es>Proyectos</span><span data-en>Projects</span></div><div class="v">07<span class="u">/ACT</span></div><div class="x"><span data-es>en producción / activos</span><span data-en>in production / active</span></div></div>
+      <div class="hstat"><div class="k"><span data-es>Experiencia</span><span data-en>Experience</span></div><div class="v">05<span class="u">YR+</span></div><div class="x"><span data-es>desarrollo &amp; IA</span><span data-en>development &amp; AI</span></div></div>
+      <div class="hstat"><div class="k"><span data-es>Foco</span><span data-en>Focus</span></div><div class="v">AI<span class="u">·ML</span></div><div class="x">LLMs · RAG · auto.</div></div>
+      <div class="hstat"><div class="k"><span data-es>Base</span><span data-en>Base</span></div><div class="v">UY<span class="u">—MVD</span></div><div class="x"><span data-es>Montevideo · remoto</span><span data-en>Montevideo · remote</span></div></div>
     </div>
   </div>
 
@@ -707,15 +716,15 @@ html,body{overflow-x:hidden;max-width:100vw}
 
 <!-- ABOUT -->
 <div class="section-mark">
-  <div class="sec">§01 · SOBRE</div>
-  <div class="tit">Quién está detrás de la máquina</div>
+  <div class="sec"><span data-es>§01 · SOBRE</span><span data-en>§01 · ABOUT</span></div>
+  <div class="tit"><span data-es>Quién está detrás de la máquina</span><span data-en>Who's behind the machine</span></div>
   <div class="ts">DOC.BIO.01</div>
 </div>
 
 <section class="manifesto" id="about">
   <div class="side">
     <div class="stamp">DRAFT · v.01<br>SIGNED</div>
-    <p>Perfil público. Firmado con ed25519. Última revisión abril 2025.</p>
+    <p><span data-es>Perfil público. Firmado con ed25519. Última revisión abril 2025.</span><span data-en>Public profile. Signed with ed25519. Last reviewed April 2025.</span></p>
     <div style="font-family:var(--mono);font-size:8px;color:var(--ink-dimmer);margin-top:24px;line-height:1.4;white-space:pre">
 SHA-256
 b7f2:c01d:bs94
@@ -724,18 +733,22 @@ a87e:2130:ut3c
     </div>
   </div>
   <div class="body">
-    <h2>Desarrollo, IA<br>y <em>propósito.</em></h2>
+    <h2><span data-es>Desarrollo, IA<br>y <em>propósito.</em></span><span data-en>Development, AI<br>and <em>purpose.</em></span></h2>
     <div class="lines">
-      <p class="hi">Creo que la tecnología <em>bien enraizada</em> empuja a la sociedad hacia adelante.</p>
-      <p>Que el código es más útil cuando es simple y verificable.</p>
-      <p class="hi">Y que Latinoamérica no necesita copiar — necesita <em>crear y reinventar.</em></p>
+      <p class="hi"><span data-es>Creo que la tecnología <em>bien enraizada</em> empuja a la sociedad hacia adelante.</span><span data-en>I believe <em>well-rooted</em> technology pushes society forward.</span></p>
+      <p><span data-es>Que el código es más útil cuando es simple y verificable.</span><span data-en>That code is most useful when it's simple and verifiable.</span></p>
+      <p class="hi"><span data-es>Y que Latinoamérica no necesita copiar — necesita <em>crear y reinventar.</em></span><span data-en>And that Latin America doesn't need to copy — it needs to <em>create and reinvent.</em></span></p>
     </div>
     <div class="expanded">
-      Actualmente me desempeño en el <b>Banco de Previsión Social (BPS)</b>, donde aporto a procesos de modernización digital e implementación de soluciones. Combino experiencia en <b>backend</b>, <b>frontend</b> y <b>machine learning</b> para crear herramientas eficientes.
+      <span data-es>Actualmente me desempeño en el <b>Banco de Previsión Social (BPS)</b>, donde aporto a procesos de modernización digital e implementación de soluciones. Combino experiencia en <b>backend</b>, <b>frontend</b> y <b>machine learning</b> para crear herramientas eficientes.
       <br><br>
       Tengo conocimiento avanzado en el uso de modelos de lenguaje (<b>LLM</b>) mediante APIs como <code>OpenAI</code>, <code>Anthropic</code> y <code>Google</code>, implementación de flujos <b>RAG</b>, y vectorización de datos con <code>ChromaDB</code> o <code>Pinecone</code>.
       <br><br>
-      Mi enfoque se centra en el diseño de soluciones tecnológicas que integren <b>IA de forma ética y eficiente</b>, desarrollando productos que sean útiles, escalables y centrados en el usuario.
+      Mi enfoque se centra en el diseño de soluciones tecnológicas que integren <b>IA de forma ética y eficiente</b>, desarrollando productos que sean útiles, escalables y centrados en el usuario.</span><span data-en>I currently work at <b>Banco de Previsión Social (BPS)</b>, contributing to digital modernization processes and the rollout of internal solutions. I combine experience in <b>backend</b>, <b>frontend</b> and <b>machine learning</b> to build efficient tools.
+      <br><br>
+      I have advanced knowledge in working with language models (<b>LLMs</b>) through APIs such as <code>OpenAI</code>, <code>Anthropic</code> and <code>Google</code>, building <b>RAG</b> pipelines, and data vectorization with <code>ChromaDB</code> or <code>Pinecone</code>.
+      <br><br>
+      My focus is on designing technology solutions that integrate <b>AI ethically and efficiently</b>, developing products that are useful, scalable and user-centered.</span>
     </div>
   </div>
 </section>
@@ -743,15 +756,15 @@ a87e:2130:ut3c
 <!-- STACK / VERTICALS -->
 <div class="section-mark">
   <div class="sec">§02 · STACK</div>
-  <div class="tit">Cuatro ejes de trabajo</div>
+  <div class="tit"><span data-es>Cuatro ejes de trabajo</span><span data-en>Four pillars of work</span></div>
   <div class="ts">CAT.4X</div>
 </div>
 
 <section class="verticals" id="stack">
   <div class="vert"><div class="num"><span>//STACK_01</span><b>BACKEND</b></div><h3>Backend</h3><div class="cnt">C#</div><div class="list"><span>.NET</span><span>Node.js</span><span>Express</span><span>APIs REST</span><span>MongoDB</span></div></div>
   <div class="vert"><div class="num"><span>//STACK_02</span><b>FRONTEND</b></div><h3>Frontend</h3><div class="cnt">JS</div><div class="list"><span>HTML5</span><span>CSS3</span><span>Vanilla JS</span><span>Web Platform</span></div></div>
-  <div class="vert"><div class="num"><span>//STACK_03</span><b>AI/ML</b></div><h3>IA &amp; ML</h3><div class="cnt">LLM</div><div class="list"><span>OpenAI</span><span>Anthropic</span><span>Google</span><span>RAG</span><span>ChromaDB</span><span>Pinecone</span></div></div>
-  <div class="vert"><div class="num"><span>//STACK_04</span><b>AUTO</b></div><h3>Automatización</h3><div class="cnt">RPA</div><div class="list"><span>UiPath</span><span>Python</span><span>PowerShell</span><span>Batch</span></div></div>
+  <div class="vert"><div class="num"><span>//STACK_03</span><b>AI/ML</b></div><h3><span data-es>IA &amp; ML</span><span data-en>AI &amp; ML</span></h3><div class="cnt">LLM</div><div class="list"><span>OpenAI</span><span>Anthropic</span><span>Google</span><span>RAG</span><span>ChromaDB</span><span>Pinecone</span></div></div>
+  <div class="vert"><div class="num"><span>//STACK_04</span><b>AUTO</b></div><h3><span data-es>Automatización</span><span data-en>Automation</span></h3><div class="cnt">RPA</div><div class="list"><span>UiPath</span><span>Python</span><span>PowerShell</span><span>Batch</span></div></div>
   <div class="vert vert-icons" style="grid-column:1/-1">
     <div class="num"><span>//STACK_05</span><b>ICONOGRAPHY</b></div>
     <h3>Tech stack</h3>
@@ -768,17 +781,17 @@ a87e:2130:ut3c
 
 <!-- PROJECTS -->
 <div class="section-mark">
-  <div class="sec">§03 · PROYECTOS</div>
-  <div class="tit">Siete iniciativas en producción</div>
+  <div class="sec"><span data-es>§03 · PROYECTOS</span><span data-en>§03 · PROJECTS</span></div>
+  <div class="tit"><span data-es>Siete iniciativas en producción</span><span data-en>Seven initiatives in production</span></div>
   <div class="ts">IDX.07</div>
 </div>
 
 <section class="companies" id="projects">
   <div class="companies-head">
-    <h2>Siete <em>iniciativas</em><br>en órbita.</h2>
+    <h2><span data-es>Siete <em>iniciativas</em><br>en órbita.</span><span data-en>Seven <em>initiatives</em><br>in orbit.</span></h2>
     <div class="legend">
-      <div><span class="swatch" style="background:var(--neon)"></span>EN PRODUCCIÓN · ACTIVO</div>
-      <div><span class="swatch" style="background:#a5b4fc"></span>ARCHIVADO · HISTÓRICO</div>
+      <div><span class="swatch" style="background:var(--neon)"></span><span data-es>EN PRODUCCIÓN · ACTIVO</span><span data-en>IN PRODUCTION · ACTIVE</span></div>
+      <div><span class="swatch" style="background:#a5b4fc"></span><span data-es>ARCHIVADO · HISTÓRICO</span><span data-en>ARCHIVED · HISTORICAL</span></div>
     </div>
   </div>
 
@@ -795,7 +808,7 @@ a87e:2130:ut3c
       </div>
       <div class="glitch-id">ID:0x01 · CPN</div>
       <div class="co-head"><span class="code">/01 · COOPNET</span><span class="kind prod">PROD</span></div>
-      <div><h4><a href="https://coopnet.uy" target="_blank" rel="noopener">Coopnet.uy</a></h4><p class="co-desc">Plataforma líder para gestión integral de cooperativas de vivienda en Uruguay. Anteriormente MiCope.org — ahora una solución completa para administración, finanzas y gestión de socios.</p></div>
+      <div><h4><a href="https://coopnet.uy" target="_blank" rel="noopener">Coopnet.uy</a></h4><p class="co-desc"><span data-es>Plataforma líder para gestión integral de cooperativas de vivienda en Uruguay. Anteriormente MiCope.org — ahora una solución completa para administración, finanzas y gestión de socios.</span><span data-en>Leading platform for end-to-end management of housing cooperatives in Uruguay. Formerly MiCope.org — now a complete solution for administration, finance and member management.</span></p></div>
       <div class="co-tech"><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Azure</span><span>AI</span></div>
       <div class="co-meta"><span>STATUS <b>LIVE</b></span><span>STACK <b>NODE</b></span><span><b>UY</b></span></div>
     </div>
@@ -814,7 +827,7 @@ a87e:2130:ut3c
       </div>
       <div class="glitch-id">ID:0x02 · AUS</div>
       <div class="co-head"><span class="code">/02 · AUSTRA</span><span class="kind active">ACT</span></div>
-      <div><h4><a href="https://austra.cc" target="_blank" rel="noopener">Austra.cc</a></h4><p class="co-desc">Hub de información y servicios tecnológicos para LATAM con base en Uruguay. Software, web apps y mobile games.</p></div>
+      <div><h4><a href="https://austra.cc" target="_blank" rel="noopener">Austra.cc</a></h4><p class="co-desc"><span data-es>Hub de información y servicios tecnológicos para LATAM con base en Uruguay. Software, web apps y mobile games.</span><span data-en>Hub of information and technology services for LATAM, based in Uruguay. Software, web apps and mobile games.</span></p></div>
       <div class="co-tech"><span>Software</span><span>Web</span><span>Mobile</span></div>
       <div class="co-meta"><span>SCOPE <b>LATAM</b></span><span>BASE <b>UY</b></span><span><b>ACT</b></span></div>
     </div>
@@ -834,7 +847,7 @@ a87e:2130:ut3c
       </div>
       <div class="glitch-id">ID:0x03 · LTI</div>
       <div class="co-head"><span class="code">/03 · LTI.UY</span><span class="kind active">ACT</span></div>
-      <div><h4><a href="https://lti.uy" target="_blank" rel="noopener">LTI.uy</a></h4><p class="co-desc">Plataforma académica centralizada para recursos de estudiantes de la Universidad Tecnológica (UTEC).</p></div>
+      <div><h4><a href="https://lti.uy" target="_blank" rel="noopener">LTI.uy</a></h4><p class="co-desc"><span data-es>Plataforma académica centralizada para recursos de estudiantes de la Universidad Tecnológica (UTEC).</span><span data-en>Centralized academic platform for student resources at Universidad Tecnológica (UTEC).</span></p></div>
       <div class="co-tech"><span>Web Platform</span><span>Education</span></div>
       <div class="co-meta"><span>ORG <b>UTEC</b></span><span>USERS <b>STUDENT</b></span><span><b>EDU</b></span></div>
     </div>
@@ -852,7 +865,7 @@ a87e:2130:ut3c
       </div>
       <div class="glitch-id">ID:0x04 · MDR</div>
       <div class="co-head"><span class="code">/04 · MADERA</span><span class="kind active">ACT</span></div>
-      <div><h4><a href="https://maderarealestate.uy/" target="_blank" rel="noopener">Madera Real Estate</a></h4><p class="co-desc">Sitio inmobiliario moderno y dinámico para operaciones en Uruguay.</p></div>
+      <div><h4><a href="https://maderarealestate.uy/" target="_blank" rel="noopener">Madera Real Estate</a></h4><p class="co-desc"><span data-es>Sitio inmobiliario moderno y dinámico para operaciones en Uruguay.</span><span data-en>Modern, dynamic real estate site for operations in Uruguay.</span></p></div>
       <div class="co-tech"><span>Node.js</span><span>Real Estate</span></div>
       <div class="co-meta"><span>SECTOR <b>RE</b></span><span>STACK <b>NODE</b></span><span><b>UY</b></span></div>
     </div>
@@ -868,7 +881,7 @@ a87e:2130:ut3c
       </div>
       <div class="glitch-id">ID:0x05 · GHA</div>
       <div class="co-head"><span class="code">/05 · G&H</span><span class="kind active">ACT</span></div>
-      <div><h4><a href="https://ghambiental.uy/" target="_blank" rel="noopener">G&amp;H Ambiental</a></h4><p class="co-desc">Plataforma institucional con blog, landing page y sección de contacto para una empresa del sector ambiental.</p></div>
+      <div><h4><a href="https://ghambiental.uy/" target="_blank" rel="noopener">G&amp;H Ambiental</a></h4><p class="co-desc"><span data-es>Plataforma institucional con blog, landing page y sección de contacto para una empresa del sector ambiental.</span><span data-en>Institutional platform with blog, landing page and contact section for a company in the environmental sector.</span></p></div>
       <div class="co-tech"><span>Web</span><span>Corporate</span><span>CMS</span></div>
       <div class="co-meta"><span>SECTOR <b>ENV</b></span><span>TYPE <b>CORP</b></span><span><b>UY</b></span></div>
     </div>
@@ -888,7 +901,7 @@ a87e:2130:ut3c
       </div>
       <div class="glitch-id">ID:0x06 · CTA</div>
       <div class="co-head"><span class="code">/06 · COUNTDOWN</span><span class="kind active">ACT</span></div>
-      <div><h4><a href="https://countdowntoai.com" target="_blank" rel="noopener">CountdowntoAI.com</a></h4><p class="co-desc">Sitio open source con cuenta regresiva hacia la AGI basada en predicciones de Metaculus y agregadores de forecasts.</p></div>
+      <div><h4><a href="https://countdowntoai.com" target="_blank" rel="noopener">CountdowntoAI.com</a></h4><p class="co-desc"><span data-es>Sitio open source con cuenta regresiva hacia la AGI basada en predicciones de Metaculus y agregadores de forecasts.</span><span data-en>Open source site with a countdown to AGI based on Metaculus predictions and forecast aggregators.</span></p></div>
       <div class="co-tech"><span>Python</span><span>JS</span><span>Open Source</span></div>
       <div class="co-meta"><span>OPEN <b>YES</b></span><span>TOPIC <b>AGI</b></span><span><b>WEB</b></span></div>
     </div>
@@ -908,7 +921,7 @@ a87e:2130:ut3c
       </div>
       <div class="glitch-id">ID:0x07 · PYG</div>
       <div class="co-head"><span class="code">/07 · PY-GUI</span><span class="kind archived">ARCH</span></div>
-      <div><h4>Python GUI for LLMs</h4><p class="co-desc">GUI en Python para interactuar con modelos GPT-3, 3.5 y 4 vía la API de OpenAI. Proyecto archivado — pionero personal en LLMs.</p></div>
+      <div><h4>Python GUI for LLMs</h4><p class="co-desc"><span data-es>GUI en Python para interactuar con modelos GPT-3, 3.5 y 4 vía la API de OpenAI. Proyecto archivado — pionero personal en LLMs.</span><span data-en>Python GUI to interact with GPT-3, 3.5 and 4 models via the OpenAI API. Archived project — early personal exploration of LLMs.</span></p></div>
       <div class="co-tech"><span>Python</span><span>OpenAI API</span><span>Tkinter</span></div>
       <div class="co-meta"><span>STATUS <b>ARCHIVED</b></span><span>YEAR <b>2023</b></span><span><b>HIST</b></span></div>
     </div>
@@ -928,7 +941,7 @@ a87e:2130:ut3c
       </div>
       <div class="glitch-id">ID:0x08 · GH</div>
       <div class="co-head"><span class="code">/08 · SOURCE</span><span class="kind org">ORG</span></div>
-      <div><h4><a href="https://github.com/missingus3r" target="_blank" rel="noopener">GitHub · missingus3r</a></h4><p class="co-desc">Código público, experimentos, prototipos y el portfolio propio. Fuente firmada y versionada.</p></div>
+      <div><h4><a href="https://github.com/missingus3r" target="_blank" rel="noopener">GitHub · missingus3r</a></h4><p class="co-desc"><span data-es>Código público, experimentos, prototipos y el portfolio propio. Fuente firmada y versionada.</span><span data-en>Public code, experiments, prototypes and the portfolio itself. Signed, versioned source.</span></p></div>
       <div class="co-tech"><span>Git</span><span>Open</span><span>Repos</span></div>
       <div class="co-meta"><span>HANDLE <b>missingus3r</b></span><span><b>PUB</b></span><span><b>↗</b></span></div>
     </div>
@@ -946,7 +959,7 @@ a87e:2130:ut3c
       </div>
       <div class="glitch-id">ID:0x09 · IN</div>
       <div class="co-head"><span class="code">/09 · LINKEDIN</span><span class="kind org">ORG</span></div>
-      <div><h4><a href="https://www.linkedin.com/in/bruno-silveira-730107a7/" target="_blank" rel="noopener">LinkedIn · Bruno Silveira</a></h4><p class="co-desc">Perfil profesional completo. Historial extendido, recomendaciones, red profesional y oportunidades.</p></div>
+      <div><h4><a href="https://www.linkedin.com/in/bruno-silveira-730107a7/" target="_blank" rel="noopener">LinkedIn · Bruno Silveira</a></h4><p class="co-desc"><span data-es>Perfil profesional completo. Historial extendido, recomendaciones, red profesional y oportunidades.</span><span data-en>Full professional profile. Extended history, recommendations, network and opportunities.</span></p></div>
       <div class="co-tech"><span>Profile</span><span>Network</span></div>
       <div class="co-meta"><span>TYPE <b>SOCIAL</b></span><span><b>PUB</b></span><span><b>↗</b></span></div>
     </div>
@@ -955,29 +968,29 @@ a87e:2130:ut3c
 
 <!-- EXPERIENCE -->
 <div class="section-mark">
-  <div class="sec">§05 · EXPERIENCIA</div>
-  <div class="tit">Trayectoria profesional</div>
+  <div class="sec"><span data-es>§05 · EXPERIENCIA</span><span data-en>§05 · EXPERIENCE</span></div>
+  <div class="tit"><span data-es>Trayectoria profesional</span><span data-en>Professional track record</span></div>
   <div class="ts">CV.TIMELINE</div>
 </div>
 
 <section class="experience">
   <div class="exp-head">
-    <h2>Trayectoria <em>firmada.</em></h2>
-    <div class="meta">DESDE 2014 · +5 AÑOS ACTIVOS</div>
+    <h2><span data-es>Trayectoria <em>firmada.</em></span><span data-en>A <em>signed</em> track record.</span></h2>
+    <div class="meta"><span data-es>DESDE 2014 · +5 AÑOS ACTIVOS</span><span data-en>SINCE 2014 · +5 YEARS ACTIVE</span></div>
   </div>
   <div class="exp-list">
     <div class="exp">
       <div class="when">
         <div>
-          <b>ACTUAL</b>
+          <b><span data-es>ACTUAL</span><span data-en>CURRENT</span></b>
           <span>2024 → NOW</span>
         </div>
         <span style="color:var(--ink-dimmer)">/exp_01</span>
       </div>
       <div class="what">
-        <div class="role">Técnico Informático · Full Stack &amp; AI Developer</div>
+        <div class="role"><span data-es>Técnico Informático · Full Stack &amp; AI Developer</span><span data-en>IT Technician · Full Stack &amp; AI Developer</span></div>
         <div class="org">BPS · Banco de Previsión Social</div>
-        <p>Modernización digital, desarrollo de soluciones full stack, implementación de IA y machine learning en procesos internos. Integración de LLMs y RAG para herramientas organizacionales.</p>
+        <p><span data-es>Modernización digital, desarrollo de soluciones full stack, implementación de IA y machine learning en procesos internos. Integración de LLMs y RAG para herramientas organizacionales.</span><span data-en>Digital modernization, full stack development, and rollout of AI and machine learning across internal processes. Integration of LLMs and RAG into organizational tools.</span></p>
       </div>
     </div>
     <div class="exp">
@@ -991,21 +1004,21 @@ a87e:2130:ut3c
       <div class="what">
         <div class="role">RPA Developer</div>
         <div class="org">PwC Uruguay · Consulting</div>
-        <p>Desarrollo de automatización de procesos con UiPath, mantenimiento, soporte a usuarios, despliegue de automatizaciones, gestión de schedules, roles y permisos.</p>
+        <p><span data-es>Desarrollo de automatización de procesos con UiPath, mantenimiento, soporte a usuarios, despliegue de automatizaciones, gestión de schedules, roles y permisos.</span><span data-en>Process automation development with UiPath, maintenance, user support, automation deployment, schedule, role and permission management.</span></p>
       </div>
     </div>
     <div class="exp">
       <div class="when">
         <div>
           <b>5 YR</b>
-          <span>GEODESIA</span>
+          <span><span data-es>GEODESIA</span><span data-en>GEODESY</span></span>
         </div>
         <span style="color:var(--ink-dimmer)">/exp_03</span>
       </div>
       <div class="what">
-        <div class="role">Técnico en Geodesia · Programador</div>
-        <div class="org">Instituto Geográfico Militar</div>
-        <p>Procesamiento de datos geodésicos de receptores GPS/GLONASS con software Bernese (AIUB). Scripts de optimización y automatización con PowerShell, Batch y PHP.</p>
+        <div class="role"><span data-es>Técnico en Geodesia · Programador</span><span data-en>Geodesy Technician · Programmer</span></div>
+        <div class="org"><span data-es>Instituto Geográfico Militar</span><span data-en>Instituto Geográfico Militar (Military Geographic Institute)</span></div>
+        <p><span data-es>Procesamiento de datos geodésicos de receptores GPS/GLONASS con software Bernese (AIUB). Scripts de optimización y automatización con PowerShell, Batch y PHP.</span><span data-en>Geodetic data processing from GPS/GLONASS receivers using Bernese software (AIUB). Optimization and automation scripts in PowerShell, Batch and PHP.</span></p>
       </div>
     </div>
   </div>
@@ -1013,8 +1026,8 @@ a87e:2130:ut3c
 
 <!-- EDUCATION -->
 <div class="section-mark">
-  <div class="sec">§05B · EDUCACIÓN</div>
-  <div class="tit">Formación académica</div>
+  <div class="sec"><span data-es>§05B · EDUCACIÓN</span><span data-en>§05B · EDUCATION</span></div>
+  <div class="tit"><span data-es>Formación académica</span><span data-en>Academic background</span></div>
   <div class="ts">EDU.INDEX</div>
 </div>
 
@@ -1022,35 +1035,35 @@ a87e:2130:ut3c
   <div class="edu">
     <span class="status ok">FIN</span>
     <div class="edu-n">01</div>
-    <h4>Lic. Tecnologías de la Información</h4>
-    <p>UTEC · Universidad Tecnológica del Uruguay</p>
+    <h4><span data-es>Lic. Tecnologías de la Información</span><span data-en>BSc · Information Technologies</span></h4>
+    <p><span data-es>UTEC · Universidad Tecnológica del Uruguay</span><span data-en>UTEC · Universidad Tecnológica del Uruguay</span></p>
   </div>
   <div class="edu">
     <span class="status ok">FIN</span>
     <div class="edu-n">02</div>
     <h4>Data Science &amp; Machine Learning</h4>
-    <p>UTEC · Formación complementaria</p>
+    <p><span data-es>UTEC · Formación complementaria</span><span data-en>UTEC · Complementary training</span></p>
   </div>
   <div class="edu">
     <span class="status">INC</span>
     <div class="edu-n">03</div>
-    <h4>Ingeniería en Electrónica</h4>
-    <p>FING · UDELAR (sin finalizar)</p>
+    <h4><span data-es>Ingeniería en Electrónica</span><span data-en>Electronic Engineering</span></h4>
+    <p><span data-es>FING · UDELAR (sin finalizar)</span><span data-en>FING · UDELAR (unfinished)</span></p>
   </div>
 </section>
 
 <!-- TERMINAL DEMO -->
 <div class="section-mark">
   <div class="sec">§06 · INTERFACE</div>
-  <div class="tit">Hablá con la terminal</div>
+  <div class="tit"><span data-es>Hablá con la terminal</span><span data-en>Talk to the terminal</span></div>
   <div class="ts">SHELL.v1</div>
 </div>
 
 <section class="demo" id="terminal">
   <div class="demo-text">
     <div class="kick">// LIVE SHELL</div>
-    <h2>Este portfolio responde <em>en texto plano.</em></h2>
-    <p>Sin dashboards, sin decoración innecesaria. Un shell público de solo lectura con información firmada y fechada. Probá un comando →</p>
+    <h2><span data-es>Este portfolio responde <em>en texto plano.</em></span><span data-en>This portfolio answers <em>in plain text.</em></span></h2>
+    <p><span data-es>Sin dashboards, sin decoración innecesaria. Un shell público de solo lectura con información firmada y fechada. Probá un comando →</span><span data-en>No dashboards, no needless decoration. A public read-only shell with signed, dated information. Try a command →</span></p>
     <div class="cmds" id="cmd-list">
       <button class="cmd-btn active" data-cmd="status">$ status</button>
       <button class="cmd-btn" data-cmd="whoami">$ whoami</button>
@@ -1073,7 +1086,7 @@ a87e:2130:ut3c
 <!-- CTA BIG -->
 <section class="cta-big" id="contact">
   <div class="mark">◉ SIGNAL · PUBLIC · SIGNED</div>
-  <h2>Escribamos <em>algo.</em></h2>
+  <h2><span data-es>Escribamos <em>algo.</em></span><span data-en>Let's write <em>something.</em></span></h2>
   <div class="cta-links">
     <a href="mailto:bru94.sil@gmail.com" class="btn primary">EMAIL <span class="arr">→</span></a>
     <a href="https://www.linkedin.com/in/bruno-silveira-730107a7/" target="_blank" rel="noopener" class="btn ghost">/ LINKEDIN</a>
@@ -1090,14 +1103,14 @@ a87e:2130:ut3c
 <footer>
   <div>
     <div class="big-mark">BR<em>U</em>NO</div>
-    <p>Full Stack &amp; AI Developer · Técnico Informático · Licenciado en Tecnologías de la Información (UTEC). Construyo desde Montevideo, Uruguay.</p>
+    <p><span data-es>Full Stack &amp; AI Developer · Técnico Informático · Licenciado en Tecnologías de la Información (UTEC). Construyo desde Montevideo, Uruguay.</span><span data-en>Full Stack &amp; AI Developer · IT Technician · Bachelor's in Information Technology (UTEC). Building from Montevideo, Uruguay.</span></p>
     <p style="margin-top:14px;font-family:var(--mono);font-size:10px;color:var(--ink-dimmer);letter-spacing:.15em">
       PUB-KEY: ed25519/b7f2c01d4492<br>
       FINGERPRINT: a87e:2130:ut3c:bps0
     </p>
   </div>
   <div>
-    <h5>Proyectos</h5>
+    <h5><span data-es>Proyectos</span><span data-en>Projects</span></h5>
     <ul>
       <li><a href="https://coopnet.uy" target="_blank" rel="noopener">Coopnet.uy</a></li>
       <li><a href="https://austra.cc" target="_blank" rel="noopener">Austra.cc</a></li>
@@ -1115,7 +1128,7 @@ a87e:2130:ut3c
     </ul>
   </div>
   <div>
-    <h5>Contacto</h5>
+    <h5><span data-es>Contacto</span><span data-en>Contact</span></h5>
     <ul>
       <li><a href="mailto:bru94.sil@gmail.com">bru94.sil@gmail.com</a></li>
       <li><a href="https://www.linkedin.com/in/bruno-silveira-730107a7/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
@@ -1160,25 +1173,51 @@ a87e:2130:ut3c
 </div>
 
 <script>
+/* I18N — picks initial lang before boot so boot text matches */
+const I18N_INIT=(function(){
+  let l='es';
+  try{const s=localStorage.getItem('portfolioLang');if(s==='es'||s==='en')l=s}catch(e){}
+  document.body.dataset.lang=l;
+  document.documentElement.lang=l;
+  return l;
+})();
+
 /* BOOT */
-const bootLines=[
-  "BRUNO.SHELL v029.26 · cyber-brutalist boot",
-  "copyright 2025 bruno silveira · uruguay",
-  "",
-  "[  OK  ] mount /trunk ........................ ok",
-  "[  OK  ] verify ed25519 signature ............ ok",
-  "[  OK  ] link 7 initiatives .................. 7/7",
-  "[  OK  ] bind verticals ...................... 4/4",
-  "[  OK  ] locale es-UY · en-US ................ ok",
-  "[ WARN ] corporate-speak subsystem ........... disabled (intencional)",
-  "[  OK  ] perfil v01 cargado .................. signed",
-  "",
-  "portfolio listo. presioná [ cualquier tecla ] para entrar__"
-];
+const bootLines={
+  es:[
+    "BRUNO.SHELL v029.26 · cyber-brutalist boot",
+    "copyright 2025 bruno silveira · uruguay",
+    "",
+    "[  OK  ] mount /trunk ........................ ok",
+    "[  OK  ] verify ed25519 signature ............ ok",
+    "[  OK  ] link 7 initiatives .................. 7/7",
+    "[  OK  ] bind verticals ...................... 4/4",
+    "[  OK  ] locale es-UY · en-US ................ ok",
+    "[ WARN ] corporate-speak subsystem ........... disabled (intencional)",
+    "[  OK  ] perfil v01 cargado .................. signed",
+    "",
+    "portfolio listo. presioná [ cualquier tecla ] para entrar__"
+  ],
+  en:[
+    "BRUNO.SHELL v029.26 · cyber-brutalist boot",
+    "copyright 2025 bruno silveira · uruguay",
+    "",
+    "[  OK  ] mount /trunk ........................ ok",
+    "[  OK  ] verify ed25519 signature ............ ok",
+    "[  OK  ] link 7 initiatives .................. 7/7",
+    "[  OK  ] bind verticals ...................... 4/4",
+    "[  OK  ] locale es-UY · en-US ................ ok",
+    "[ WARN ] corporate-speak subsystem ........... disabled (intentional)",
+    "[  OK  ] profile v01 loaded .................. signed",
+    "",
+    "portfolio ready. press [ any key ] to enter__"
+  ]
+};
 (async()=>{
   const pre=document.getElementById('boot-pre');
-  for(let i=0;i<bootLines.length;i++){
-    pre.innerHTML+='<span class="line">'+bootLines[i]+'</span>\n';
+  const lines=bootLines[I18N_INIT]||bootLines.es;
+  for(let i=0;i<lines.length;i++){
+    pre.innerHTML+='<span class="line">'+lines[i]+'</span>\n';
     await new Promise(r=>setTimeout(r, i<3?100:50));
   }
   setTimeout(()=>{document.getElementById('boot').classList.add('done')},800);
@@ -1196,89 +1235,173 @@ function tick(){
 tick();setInterval(tick,1000);
 
 /* TERMINAL */
-const OUT={
-  status:[
-    ['c','// runtime: bruno.trunk // portfolio'],
-    ['pr','bruno@trunk:~$ '],['o','status --verbose\n'],
-    ['o','  ◉ trunk          ONLINE        latency 47ms\n'],
-    ['o','  ◉ coopnet.uy     LIVE          node+mongo\n'],
-    ['o','  ◉ austra.cc      ACTIVE        latam\n'],
-    ['o','  ◉ lti.uy         ACTIVE        utec\n'],
-    ['o','  ◉ madera r.e.    ACTIVE        re\n'],
-    ['o','  ◉ g&h ambiental  ACTIVE        corp\n'],
-    ['o','  ◉ countdowntoai  ACTIVE        open src\n'],
-    ['o','  ◉ py-gui llms    ARCHIVED      2023\n'],
-    ['c','>> all systems nominal.\n'],
-    ['pr','bruno@trunk:~$ '],['cur','']
-  ],
-  whoami:[
-    ['pr','bruno@trunk:~$ '],['o','whoami\n'],
-    ['o','  uid=1000(bruno) gid=1000(dev)\n'],
-    ['o','  role: full-stack + ai developer\n'],
-    ['o','  location: montevideo · uruguay\n'],
-    ['o','  employer: BPS (banco de previsión social)\n'],
-    ['o','  edu: UTEC · lic. tecnologías de la información\n'],
-    ['c','>> disponible para colaboraciones remotas.\n'],
-    ['pr','bruno@trunk:~$ '],['cur','']
-  ],
-  stack:[
-    ['pr','bruno@trunk:~$ '],['o','cat stack.md\n'],
-    ['kw','# STACK · v2025\n'],
-    ['o','\n'],
-    ['o','## backend\n'],
-    ['o','- C# · .NET\n'],
-    ['o','- Node.js · Express\n'],
-    ['o','- MongoDB · SQL\n'],
-    ['o','\n'],
-    ['o','## frontend\n'],
-    ['o','- HTML5 · CSS3 · Vanilla JS\n'],
-    ['o','\n'],
-    ['o','## ai / ml\n'],
-    ['o','- LLMs: OpenAI · Anthropic · Google\n'],
-    ['o','- RAG · vector stores (ChromaDB · Pinecone)\n'],
-    ['o','- Python\n'],
-    ['o','\n'],
-    ['o','## automation\n'],
-    ['o','- UiPath · PowerShell · Batch\n'],
-    ['c','\n// signed b7f2c01d · 2025-04\n'],
-    ['pr','bruno@trunk:~$ '],['cur','']
-  ],
-  ls:[
-    ['pr','bruno@trunk:~$ '],['o','ls --projects\n'],
-    ['kw','drwxr-xr-x'],['o','  1  coopnet.uy/     '],['str','"coop management · node+mongo+azure"\n'],
-    ['kw','drwxr-xr-x'],['o','  1  austra.cc/      '],['str','"latam tech hub"\n'],
-    ['kw','drwxr-xr-x'],['o','  1  lti.uy/         '],['str','"utec academic platform"\n'],
-    ['kw','drwxr-xr-x'],['o','  1  madera-re/      '],['str','"real estate site"\n'],
-    ['kw','drwxr-xr-x'],['o','  1  ghambiental/    '],['str','"environmental corp"\n'],
-    ['kw','drwxr-xr-x'],['o','  1  countdowntoai/  '],['str','"agi countdown · open"\n'],
-    ['kw','-rw-r--r--'],['o','  1  python-gui-llms '],['str','"archived · 2023"\n'],
-    ['c','>> 7 iniciativas · 6 live · 1 archivada\n'],
-    ['pr','bruno@trunk:~$ '],['cur','']
-  ],
-  contact:[
-    ['pr','bruno@trunk:~$ '],['o','contact\n'],
-    ['o','  email:    '],['str','bru94.sil@gmail.com\n'],
-    ['o','  linkedin: '],['str','/in/bruno-silveira-730107a7\n'],
-    ['o','  github:   '],['str','missingus3r\n'],
-    ['c','>> signal: public · signed\n'],
-    ['pr','bruno@trunk:~$ '],['cur','']
-  ],
-  hire:[
-    ['pr','bruno@trunk:~$ '],['o','hire --remote\n'],
-    ['c','> checking availability.............'],['o',' OK\n'],
-    ['c','> profile signed...................'],['o',' ed25519 ✓\n'],
-    ['c','> contract modes...................'],['o',' freelance / consulting / full-time\n'],
-    ['c','> skills verified..................'],['o',' full-stack + ai\n'],
-    ['o','\n  escribime a bru94.sil@gmail.com\n'],
-    ['o','  o por LinkedIn.\n'],
-    ['c','>> listening.\n'],
-    ['pr','bruno@trunk:~$ '],['cur','']
-  ]
+const OUT_ALL={
+  es:{
+    status:[
+      ['c','// runtime: bruno.trunk // portfolio'],
+      ['pr','bruno@trunk:~$ '],['o','status --verbose\n'],
+      ['o','  ◉ trunk          ONLINE        latency 47ms\n'],
+      ['o','  ◉ coopnet.uy     LIVE          node+mongo\n'],
+      ['o','  ◉ austra.cc      ACTIVE        latam\n'],
+      ['o','  ◉ lti.uy         ACTIVE        utec\n'],
+      ['o','  ◉ madera r.e.    ACTIVE        re\n'],
+      ['o','  ◉ g&h ambiental  ACTIVE        corp\n'],
+      ['o','  ◉ countdowntoai  ACTIVE        open src\n'],
+      ['o','  ◉ py-gui llms    ARCHIVED      2023\n'],
+      ['c','>> all systems nominal.\n'],
+      ['pr','bruno@trunk:~$ '],['cur','']
+    ],
+    whoami:[
+      ['pr','bruno@trunk:~$ '],['o','whoami\n'],
+      ['o','  uid=1000(bruno) gid=1000(dev)\n'],
+      ['o','  role: full-stack + ai developer\n'],
+      ['o','  location: montevideo · uruguay\n'],
+      ['o','  employer: BPS (banco de previsión social)\n'],
+      ['o','  edu: UTEC · lic. tecnologías de la información\n'],
+      ['c','>> disponible para colaboraciones remotas.\n'],
+      ['pr','bruno@trunk:~$ '],['cur','']
+    ],
+    stack:[
+      ['pr','bruno@trunk:~$ '],['o','cat stack.md\n'],
+      ['kw','# STACK · v2025\n'],
+      ['o','\n'],
+      ['o','## backend\n'],
+      ['o','- C# · .NET\n'],
+      ['o','- Node.js · Express\n'],
+      ['o','- MongoDB · SQL\n'],
+      ['o','\n'],
+      ['o','## frontend\n'],
+      ['o','- HTML5 · CSS3 · Vanilla JS\n'],
+      ['o','\n'],
+      ['o','## ai / ml\n'],
+      ['o','- LLMs: OpenAI · Anthropic · Google\n'],
+      ['o','- RAG · vector stores (ChromaDB · Pinecone)\n'],
+      ['o','- Python\n'],
+      ['o','\n'],
+      ['o','## automation\n'],
+      ['o','- UiPath · PowerShell · Batch\n'],
+      ['c','\n// signed b7f2c01d · 2025-04\n'],
+      ['pr','bruno@trunk:~$ '],['cur','']
+    ],
+    ls:[
+      ['pr','bruno@trunk:~$ '],['o','ls --projects\n'],
+      ['kw','drwxr-xr-x'],['o','  1  coopnet.uy/     '],['str','"coop management · node+mongo+azure"\n'],
+      ['kw','drwxr-xr-x'],['o','  1  austra.cc/      '],['str','"latam tech hub"\n'],
+      ['kw','drwxr-xr-x'],['o','  1  lti.uy/         '],['str','"utec academic platform"\n'],
+      ['kw','drwxr-xr-x'],['o','  1  madera-re/      '],['str','"real estate site"\n'],
+      ['kw','drwxr-xr-x'],['o','  1  ghambiental/    '],['str','"environmental corp"\n'],
+      ['kw','drwxr-xr-x'],['o','  1  countdowntoai/  '],['str','"agi countdown · open"\n'],
+      ['kw','-rw-r--r--'],['o','  1  python-gui-llms '],['str','"archived · 2023"\n'],
+      ['c','>> 7 iniciativas · 6 live · 1 archivada\n'],
+      ['pr','bruno@trunk:~$ '],['cur','']
+    ],
+    contact:[
+      ['pr','bruno@trunk:~$ '],['o','contact\n'],
+      ['o','  email:    '],['str','bru94.sil@gmail.com\n'],
+      ['o','  linkedin: '],['str','/in/bruno-silveira-730107a7\n'],
+      ['o','  github:   '],['str','missingus3r\n'],
+      ['c','>> signal: public · signed\n'],
+      ['pr','bruno@trunk:~$ '],['cur','']
+    ],
+    hire:[
+      ['pr','bruno@trunk:~$ '],['o','hire --remote\n'],
+      ['c','> checking availability.............'],['o',' OK\n'],
+      ['c','> profile signed...................'],['o',' ed25519 ✓\n'],
+      ['c','> contract modes...................'],['o',' freelance / consulting / full-time\n'],
+      ['c','> skills verified..................'],['o',' full-stack + ai\n'],
+      ['o','\n  escribime a bru94.sil@gmail.com\n'],
+      ['o','  o por LinkedIn.\n'],
+      ['c','>> listening.\n'],
+      ['pr','bruno@trunk:~$ '],['cur','']
+    ]
+  },
+  en:{
+    status:[
+      ['c','// runtime: bruno.trunk // portfolio'],
+      ['pr','bruno@trunk:~$ '],['o','status --verbose\n'],
+      ['o','  ◉ trunk          ONLINE        latency 47ms\n'],
+      ['o','  ◉ coopnet.uy     LIVE          node+mongo\n'],
+      ['o','  ◉ austra.cc      ACTIVE        latam\n'],
+      ['o','  ◉ lti.uy         ACTIVE        utec\n'],
+      ['o','  ◉ madera r.e.    ACTIVE        re\n'],
+      ['o','  ◉ g&h ambiental  ACTIVE        corp\n'],
+      ['o','  ◉ countdowntoai  ACTIVE        open src\n'],
+      ['o','  ◉ py-gui llms    ARCHIVED      2023\n'],
+      ['c','>> all systems nominal.\n'],
+      ['pr','bruno@trunk:~$ '],['cur','']
+    ],
+    whoami:[
+      ['pr','bruno@trunk:~$ '],['o','whoami\n'],
+      ['o','  uid=1000(bruno) gid=1000(dev)\n'],
+      ['o','  role: full-stack + ai developer\n'],
+      ['o','  location: montevideo · uruguay\n'],
+      ['o','  employer: BPS (uruguayan social security bank)\n'],
+      ['o','  edu: UTEC · bsc information technologies\n'],
+      ['c','>> open to remote collaborations.\n'],
+      ['pr','bruno@trunk:~$ '],['cur','']
+    ],
+    stack:[
+      ['pr','bruno@trunk:~$ '],['o','cat stack.md\n'],
+      ['kw','# STACK · v2025\n'],
+      ['o','\n'],
+      ['o','## backend\n'],
+      ['o','- C# · .NET\n'],
+      ['o','- Node.js · Express\n'],
+      ['o','- MongoDB · SQL\n'],
+      ['o','\n'],
+      ['o','## frontend\n'],
+      ['o','- HTML5 · CSS3 · Vanilla JS\n'],
+      ['o','\n'],
+      ['o','## ai / ml\n'],
+      ['o','- LLMs: OpenAI · Anthropic · Google\n'],
+      ['o','- RAG · vector stores (ChromaDB · Pinecone)\n'],
+      ['o','- Python\n'],
+      ['o','\n'],
+      ['o','## automation\n'],
+      ['o','- UiPath · PowerShell · Batch\n'],
+      ['c','\n// signed b7f2c01d · 2025-04\n'],
+      ['pr','bruno@trunk:~$ '],['cur','']
+    ],
+    ls:[
+      ['pr','bruno@trunk:~$ '],['o','ls --projects\n'],
+      ['kw','drwxr-xr-x'],['o','  1  coopnet.uy/     '],['str','"coop management · node+mongo+azure"\n'],
+      ['kw','drwxr-xr-x'],['o','  1  austra.cc/      '],['str','"latam tech hub"\n'],
+      ['kw','drwxr-xr-x'],['o','  1  lti.uy/         '],['str','"utec academic platform"\n'],
+      ['kw','drwxr-xr-x'],['o','  1  madera-re/      '],['str','"real estate site"\n'],
+      ['kw','drwxr-xr-x'],['o','  1  ghambiental/    '],['str','"environmental corp"\n'],
+      ['kw','drwxr-xr-x'],['o','  1  countdowntoai/  '],['str','"agi countdown · open"\n'],
+      ['kw','-rw-r--r--'],['o','  1  python-gui-llms '],['str','"archived · 2023"\n'],
+      ['c','>> 7 initiatives · 6 live · 1 archived\n'],
+      ['pr','bruno@trunk:~$ '],['cur','']
+    ],
+    contact:[
+      ['pr','bruno@trunk:~$ '],['o','contact\n'],
+      ['o','  email:    '],['str','bru94.sil@gmail.com\n'],
+      ['o','  linkedin: '],['str','/in/bruno-silveira-730107a7\n'],
+      ['o','  github:   '],['str','missingus3r\n'],
+      ['c','>> signal: public · signed\n'],
+      ['pr','bruno@trunk:~$ '],['cur','']
+    ],
+    hire:[
+      ['pr','bruno@trunk:~$ '],['o','hire --remote\n'],
+      ['c','> checking availability.............'],['o',' OK\n'],
+      ['c','> profile signed...................'],['o',' ed25519 ✓\n'],
+      ['c','> contract modes...................'],['o',' freelance / consulting / full-time\n'],
+      ['c','> skills verified..................'],['o',' full-stack + ai\n'],
+      ['o','\n  reach me at bru94.sil@gmail.com\n'],
+      ['o','  or via LinkedIn.\n'],
+      ['c','>> listening.\n'],
+      ['pr','bruno@trunk:~$ '],['cur','']
+    ]
+  }
 };
+let CURRENT_CMD='status';
 function renderTerm(key){
+  CURRENT_CMD=key;
+  const lang=document.body.dataset.lang||'es';
   const body=document.getElementById('term-body');
   body.innerHTML='';
-  const lines=OUT[key];
+  const lines=(OUT_ALL[lang]||OUT_ALL.es)[key];
   let i=0;
   function step(){
     if(i>=lines.length)return;
@@ -1293,7 +1416,6 @@ function renderTerm(key){
   }
   step();
 }
-renderTerm('status');
 document.querySelectorAll('#cmd-list .cmd-btn').forEach(b=>{
   b.addEventListener('click',()=>{
     document.querySelectorAll('#cmd-list .cmd-btn').forEach(x=>x.classList.remove('active'));
@@ -1301,6 +1423,33 @@ document.querySelectorAll('#cmd-list .cmd-btn').forEach(b=>{
     renderTerm(b.dataset.cmd);
   });
 });
+
+/* LANGUAGE TOGGLE */
+(function(){
+  const tog=document.getElementById('lang-tog');
+  function setLang(l,opts){
+    if(l!=='es'&&l!=='en')l='es';
+    document.body.dataset.lang=l;
+    document.documentElement.lang=l;
+    if(opts&&opts.persist!==false){
+      try{localStorage.setItem('portfolioLang',l)}catch(e){}
+    }
+    if(tog){
+      tog.querySelectorAll('span[data-set-lang]').forEach(s=>{
+        s.classList.toggle('on',s.dataset.setLang===l);
+      });
+    }
+    /* Re-render terminal in new language */
+    renderTerm(CURRENT_CMD);
+  }
+  if(tog){
+    tog.querySelectorAll('span[data-set-lang]').forEach(s=>{
+      s.addEventListener('click',()=>setLang(s.dataset.setLang));
+    });
+  }
+  /* Initial render: sync UI state with already-applied lang (no localStorage write) */
+  setLang(document.body.dataset.lang||'es',{persist:false});
+})();
 
 /* GLITCH HOVER ON PROJECT TITLES */
 document.querySelectorAll('.co').forEach(card=>{
