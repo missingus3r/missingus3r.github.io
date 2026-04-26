@@ -155,6 +155,19 @@ h1.display{
   font-size:clamp(44px,8vw,124px);line-height:.92;letter-spacing:-.04em;
   margin-bottom:28px;
 }
+h1.display.hero-prompt{
+  font-family:var(--mono);font-weight:500;
+  font-size:clamp(22px,4.6vw,56px);line-height:1.15;letter-spacing:0;
+  word-break:break-all;overflow-wrap:anywhere;
+}
+h1.display.hero-prompt .prompt-path{color:var(--ink-dim)}
+h1.display.hero-prompt .prompt-arrow{color:var(--neon);margin:0 .15em}
+h1.display.hero-prompt .prompt-cmd{color:var(--ink)}
+h1.display.hero-prompt .prompt-cursor{
+  display:inline-block;color:var(--neon);margin-left:.1em;
+  animation:hero-cursor-blink 1.05s steps(1) infinite;
+}
+@keyframes hero-cursor-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
 h1.display .em{
   font-style:italic;font-weight:400;color:var(--neon);
   position:relative;display:inline-block;
@@ -667,10 +680,7 @@ html,body{overflow-x:hidden;max-width:100vw}
       <span>[ UY // BPS // UTEC ]</span>
     </div>
 
-    <h1 class="display">
-      Código con <span class="em" data-text="raíces">raíces<span class="bracket">.</span></span><br>
-      Tecnología con <span class="und">propósito<span class="bracket">.</span></span>
-    </h1>
+    <h1 class="display hero-prompt"><span class="prompt-path">C:\Users\Br1</span><span class="prompt-arrow">&gt;</span><span class="prompt-cmd">whoami</span><span class="prompt-cursor">_</span></h1>
 
     <p class="hero-sub">
       Soy <b>Bruno Silveira</b>. Técnico Informático · Licenciado en Tecnologías de la Información (UTEC). Construyo soluciones digitales modernas, escalables y potenciadas por <b>Inteligencia Artificial</b> — backend, frontend y flujos de ML aplicados al mundo real.
@@ -748,7 +758,7 @@ a87e:2130:ut3c
     <h2>Desarrollo, IA<br>y <em>propósito.</em></h2>
     <div class="lines">
       <p class="hi">Creo que la tecnología <em>bien enraizada</em> empuja a la sociedad hacia adelante.</p>
-      <p>Que el código es más útil cuando es honesto, simple y verificable.</p>
+      <p>Que el código es más útil cuando es simple y verificable.</p>
       <p class="hi">Y que Latinoamérica no necesita copiar — necesita <em>crear y reinventar.</em></p>
     </div>
     <div class="expanded">
