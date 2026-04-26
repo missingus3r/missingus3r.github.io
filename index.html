@@ -1537,8 +1537,35 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   const SIZE=200; cv.width=SIZE*dpr; cv.height=SIZE*dpr; cv.style.width=SIZE+'px'; cv.style.height=SIZE+'px';
   ctx.scale(dpr,dpr);
   const R=78,cx=SIZE/2,cy=SIZE/2;
-  const tilt=20*Math.PI/180;
+  let phi=20*Math.PI/180;
   let lambda=0;
+  cv.style.cursor='grab';
+  cv.style.touchAction='none';
+  let dragging=false, lastX=0, lastY=0, lastInteract=0;
+  const IDLE_MS=2500;
+  cv.addEventListener('pointerdown',e=>{
+    dragging=true; lastX=e.clientX; lastY=e.clientY; lastInteract=Date.now();
+    cv.setPointerCapture(e.pointerId); cv.style.cursor='grabbing';
+  });
+  cv.addEventListener('pointermove',e=>{
+    if(!dragging)return;
+    const dx=e.clientX-lastX, dy=e.clientY-lastY;
+    lastX=e.clientX; lastY=e.clientY;
+    lambda += dx*0.008;
+    phi    += dy*0.008;
+    if(phi> 1.2) phi= 1.2;
+    if(phi<-1.2) phi=-1.2;
+    lastInteract=Date.now();
+  });
+  const endDrag=e=>{
+    if(!dragging)return;
+    dragging=false; cv.style.cursor='grab';
+    lastInteract=Date.now();
+    try{cv.releasePointerCapture(e.pointerId);}catch(_){}
+  };
+  cv.addEventListener('pointerup',endDrag);
+  cv.addEventListener('pointercancel',endDrag);
+  cv.addEventListener('pointerleave',endDrag);
   const D2R=Math.PI/180;
   const MVD_LAT=-34.9*D2R, MVD_LON=-56.17*D2R;
   const css=getComputedStyle(document.documentElement);
@@ -1549,8 +1576,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     const x0=Math.cos(lat)*Math.sin(lon+lambda);
     const y0=Math.sin(lat);
     const z0=Math.cos(lat)*Math.cos(lon+lambda);
-    const y1=y0*Math.cos(tilt)-z0*Math.sin(tilt);
-    const z1=y0*Math.sin(tilt)+z0*Math.cos(tilt);
+    const y1=y0*Math.cos(phi)-z0*Math.sin(phi);
+    const z1=y0*Math.sin(phi)+z0*Math.cos(phi);
     return {x:cx+R*x0, y:cy-R*y1, z:z1};
   }
 
@@ -1665,7 +1692,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
       ctx.arc(m.x,m.y,2.4,0,2*Math.PI);
       ctx.fill();
     }
-    lambda+=0.0035;
+    const idle = !dragging && (Date.now()-lastInteract > IDLE_MS);
+    if(idle) lambda += 0.0035;
     requestAnimationFrame(tick);
   }
   tick();
