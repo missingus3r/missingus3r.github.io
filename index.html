@@ -858,24 +858,32 @@ html,body{overflow-x:hidden;max-width:100vw}
 <div id="tech-modal" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.85);align-items:center;justify-content:center;padding:20px" onclick="if(event.target===this)this.style.display='none'">
   <div style="background:#0a0a0a;border:1px solid var(--line-2);padding:32px;max-width:600px;width:100%;max-height:80vh;overflow-y:auto;position:relative">
     <button onclick="document.getElementById('tech-modal').style.display='none'" style="position:absolute;top:12px;right:16px;background:none;border:none;color:var(--ink-dim);font-size:18px;cursor:pointer">×</button>
-    <h3 style="font-family:var(--display);font-size:22px;margin-bottom:16px;color:var(--neon)">Tech Stack</h3>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-family:var(--mono);font-size:12px;color:var(--ink-dim);letter-spacing:.1em">
-      <div>Node.js</div><div>Express</div>
-      <div>JavaScript</div><div>TypeScript</div>
-      <div>HTML5</div><div>CSS3</div>
-      <div>Python</div><div>Java</div>
-      <div>Spring Boot</div><div>.NET</div>
-      <div>Bash</div><div>PowerShell</div>
-      <div>MongoDB</div><div>SQLite</div>
-      <div>PostgreSQL</div><div>EJS</div>
-      <div>Git</div><div>GitHub</div>
-      <div>Docker</div><div>Nginx</div>
-      <div>Linux</div><div>VS Code</div>
-      <div>Electron</div><div>Regex</div>
-      <div style="color:var(--neon)">OpenAI API</div><div style="color:var(--neon)">Anthropic API</div>
-      <div style="color:var(--neon)">Google AI</div><div style="color:var(--neon)">RAG</div>
-      <div style="color:var(--neon)">ChromaDB</div><div style="color:var(--neon)">Pinecone</div>
-      <div>UiPath</div><div>Markdown</div>
+    <h3 style="font-family:var(--display);font-size:22px;margin-bottom:20px;color:var(--neon)">Tech Stack</h3>
+    <div style="font-family:var(--mono);font-size:12px;letter-spacing:.1em">
+      <div style="color:var(--neon);font-size:10px;letter-spacing:.2em;margin-bottom:8px;text-transform:uppercase">// BACKEND</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--ink-dim);margin-bottom:16px">
+        <span>Node.js</span><span>Express</span><span>Java</span><span>Spring Boot</span><span>.NET</span><span>Python</span><span>EJS</span>
+      </div>
+      <div style="color:var(--neon);font-size:10px;letter-spacing:.2em;margin-bottom:8px;text-transform:uppercase">// FRONTEND</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--ink-dim);margin-bottom:16px">
+        <span>JavaScript</span><span>TypeScript</span><span>HTML5</span><span>CSS3</span><span>Electron</span>
+      </div>
+      <div style="color:var(--neon);font-size:10px;letter-spacing:.2em;margin-bottom:8px;text-transform:uppercase">// AI & APIs</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--neon);margin-bottom:16px">
+        <span>OpenAI API</span><span>Anthropic API</span><span>Google AI</span><span>RAG</span><span>ChromaDB</span><span>Pinecone</span>
+      </div>
+      <div style="color:var(--neon);font-size:10px;letter-spacing:.2em;margin-bottom:8px;text-transform:uppercase">// DATABASES</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--ink-dim);margin-bottom:16px">
+        <span>MongoDB</span><span>SQLite</span><span>PostgreSQL</span>
+      </div>
+      <div style="color:var(--neon);font-size:10px;letter-spacing:.2em;margin-bottom:8px;text-transform:uppercase">// DEVOPS & TOOLS</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--ink-dim);margin-bottom:16px">
+        <span>Git</span><span>GitHub</span><span>Docker</span><span>Nginx</span><span>Linux</span><span>VS Code</span>
+      </div>
+      <div style="color:var(--neon);font-size:10px;letter-spacing:.2em;margin-bottom:8px;text-transform:uppercase">// AUTOMATION</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--ink-dim)">
+        <span>Bash</span><span>PowerShell</span><span>UiPath</span><span>Regex</span><span>Markdown</span>
+      </div>
     </div>
   </div>
 </div>
