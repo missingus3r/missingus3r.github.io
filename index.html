@@ -149,21 +149,6 @@ nav.main ul a .num{color:var(--ink-dimmer);margin-right:6px;font-size:10px}
 .hamburger.open span:nth-child(2){opacity:0}
 .hamburger.open span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
 
-/* ============ TICKER ============ */
-.ticker{
-  border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);
-  background:#050505;
-  overflow:hidden;position:relative;height:28px;
-}
-.ticker-track{
-  display:flex;gap:40px;white-space:nowrap;
-  animation:tk 70s linear infinite;
-  padding:6px 0;font-size:11px;letter-spacing:.1em;
-}
-.ticker-track span{color:var(--ink-dim)}
-.ticker-track b{color:var(--neon);font-weight:600}
-.ticker-track em{color:var(--warn);font-style:normal}
-@keyframes tk{to{transform:translateX(-50%)}}
 
 /* ============ HERO ============ */
 .hero{
@@ -247,7 +232,7 @@ h1.display .und{text-decoration:underline;text-decoration-color:var(--neon);text
 }
 .hstat{padding:18px 20px;border-right:1px solid var(--line-2)}
 .hstat:last-child{border-right:none}
-.hstat .k{font-size:9.5px;letter-spacing:.2em;color:var(--ink-dimmer);margin-bottom:8px;text-transform:uppercase}
+.hstat .k{font-size:12px;letter-spacing:.2em;color:var(--ink-dimmer);margin-bottom:8px;text-transform:uppercase}
 .hstat .v{font-family:var(--display);font-size:38px;font-weight:600;letter-spacing:-.03em}
 .hstat .v .u{font-size:14px;color:var(--neon);font-weight:400;margin-left:4px}
 .hstat .x{font-size:10.5px;color:var(--ink-dim);margin-top:4px}
@@ -678,26 +663,11 @@ html,body{overflow-x:hidden;max-width:100vw}
     </div>
   </nav>
 
-  <div class="ticker">
-    <div class="ticker-track">
-      <span data-es>▸ <b>COOPNET.UY</b> en producción · <em>+5 años</em> experiencia · <b>BPS</b> modernización digital · <b>Node.js</b> · <b>Python</b> · <b>Node.js</b> · <b>LLMs + RAG</b> (OpenAI · Anthropic · Google) · <b>ChromaDB · Pinecone</b> · <b>RPA / UiPath</b> · <b>LTI.UY</b> plataforma académica · <b>AUSTRA.CC</b> hub LATAM · <b>COUNTDOWNTOAI</b> open source · signal: stable ·</span>
-      <span data-en>▸ <b>COOPNET.UY</b> in production · <em>+5 years</em> experience · <b>BPS</b> digital modernization · <b>Node.js</b> · <b>Python</b> · <b>Node.js</b> · <b>LLMs + RAG</b> (OpenAI · Anthropic · Google) · <b>ChromaDB · Pinecone</b> · <b>RPA / UiPath</b> · <b>LTI.UY</b> academic platform · <b>AUSTRA.CC</b> LATAM hub · <b>COUNTDOWNTOAI</b> open source · signal: stable ·</span>
-      <span data-es>▸ <b>COOPNET.UY</b> en producción · <em>+5 años</em> experiencia · <b>BPS</b> modernización digital · <b>Node.js</b> · <b>Python</b> · <b>Node.js</b> · <b>LLMs + RAG</b> (OpenAI · Anthropic · Google) · <b>ChromaDB · Pinecone</b> · <b>RPA / UiPath</b> · <b>LTI.UY</b> plataforma académica · <b>AUSTRA.CC</b> hub LATAM · <b>COUNTDOWNTOAI</b> open source · signal: stable ·</span>
-      <span data-en>▸ <b>COOPNET.UY</b> in production · <em>+5 years</em> experience · <b>BPS</b> digital modernization · <b>Node.js</b> · <b>Python</b> · <b>Node.js</b> · <b>LLMs + RAG</b> (OpenAI · Anthropic · Google) · <b>ChromaDB · Pinecone</b> · <b>RPA / UiPath</b> · <b>LTI.UY</b> academic platform · <b>AUSTRA.CC</b> LATAM hub · <b>COUNTDOWNTOAI</b> open source · signal: stable ·</span>
-    </div>
-  </div>
 </div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-main">
-    <div class="bread">
-      <span class="tag">LIVE</span>
-      <span>FULL_STACK · AI · AUTOMATION</span>
-      <span class="ok">◉ SECURE CONN</span>
-      <span>[ UY // BPS // UTEC ]</span>
-    </div>
-
     <h1 class="display hero-prompt"><span class="prompt-path">C:\Users\Br1</span><span class="prompt-arrow">&gt;</span><span class="prompt-cmd">whoami</span><span class="prompt-cursor">_</span></h1>
 
     <p class="hero-sub">
@@ -719,16 +689,6 @@ html,body{overflow-x:hidden;max-width:100vw}
   </div>
 
   <aside class="hero-side">
-    <div class="sys-panel">
-      <h5>SYSTEM.STATUS <span class="dot"></span></h5>
-      <div class="kv"><span>TRUNK</span><b class="g">◉ HEALTHY</b></div>
-      <div class="kv"><span>ROLE</span><b>FULL STACK + AI</b></div>
-      <div class="kv"><span>EMP</span><b>BPS · UY</b></div>
-      <div class="kv"><span>LOCALE</span><b>es-UY · en-US</b></div>
-      <div class="kv"><span>LICENSE</span><b>MIT · CC-BY</b></div>
-      <div class="kv"><span>SIGNED</span><b class="g">ED25519 ✓</b></div>
-    </div>
-
     <div class="globe-map">
       <div class="globe-head"><span>MAP // LATAM // UY.MVD</span><span class="globe-coord">-34.90°S · -56.17°W</span></div>
       <canvas id="globe-cv" width="200" height="200" aria-hidden="true"></canvas>
@@ -755,23 +715,7 @@ html,body{overflow-x:hidden;max-width:100vw}
 </div>
 
 <section class="manifesto" id="about">
-  <div class="side">
-    <div class="stamp">DRAFT · v.01<br>SIGNED</div>
-    <p><span data-es>Perfil público. Firmado con ed25519. Última revisión abril 2025.</span><span data-en>Public profile. Signed with ed25519. Last reviewed April 2025.</span></p>
-    <div style="font-family:var(--mono);font-size:8px;color:var(--ink-dimmer);margin-top:24px;line-height:1.4;white-space:pre">
-SHA-256
-b7f2:c01d:bs94
-a87e:2130:ut3c
-8c15:bf88:bps0
-    </div>
-  </div>
-  <div class="body">
-    <h2><span data-es>Desarrollo, IA<br>y <em>propósito.</em></span><span data-en>Development, AI<br>and <em>purpose.</em></span></h2>
-    <div class="lines">
-      <p class="hi"><span data-es>Creo que la tecnología <em>bien enraizada</em> empuja a la sociedad hacia adelante.</span><span data-en>I believe <em>well-rooted</em> technology pushes society forward.</span></p>
-      <p><span data-es>Que el código es más útil cuando es simple y verificable.</span><span data-en>That code is most useful when it's simple and verifiable.</span></p>
-      <p class="hi"><span data-es>Y que Latinoamérica no necesita copiar — necesita <em>crear y reinventar.</em></span><span data-en>And that Latin America doesn't need to copy — it needs to <em>create and reinvent.</em></span></p>
-    </div>
+  <div class="body" style="font-size:16px;line-height:1.7">
     <div class="expanded">
       <span data-es>Actualmente me desempeño en el <b>Banco de Previsión Social (BPS)</b>, donde aporto a procesos de modernización digital e implementación de soluciones. Combino experiencia en <b>backend</b>, <b>frontend</b> y <b>machine learning</b> para crear herramientas eficientes.
       <br><br>
@@ -979,23 +923,6 @@ a87e:2130:ut3c
       <div class="co-meta"><span>HANDLE <b>missingus3r</b></span><span><b>PUB</b></span><span><b>↗</b></span></div>
     </div>
 
-    <div class="co">
-      <div class="co-thumb" aria-hidden="true">
-        <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="14" y="32" width="22" height="16" rx="8" transform="rotate(-30 25 40)"/>
-          <rect x="44" y="32" width="22" height="16" rx="8" transform="rotate(-30 55 40)" class="accent"/>
-          <path d="M32 42 L48 38" stroke-width="2.4"/>
-          <circle cx="22" cy="60" r="2" fill="currentColor" stroke="none" opacity=".55"/>
-          <path d="M22 64 V70 M28 64 V70 M34 64 V70" opacity=".55"/>
-          <path class="accent" d="M52 60 V70 M58 56 V70 M64 60 V70"/>
-        </svg>
-      </div>
-      <div class="glitch-id">ID:0x09 · IN</div>
-      <div class="co-head"><span class="code">/09 · LINKEDIN</span><span class="kind org">ORG</span></div>
-      <div><h4><a href="https://www.linkedin.com/in/bruno-silveira-730107a7/" target="_blank" rel="noopener">LinkedIn · Bruno Silveira</a></h4><p class="co-desc"><span data-es>Perfil profesional completo. Historial extendido, recomendaciones, red profesional y oportunidades.</span><span data-en>Full professional profile. Extended history, recommendations, network and opportunities.</span></p></div>
-      <div class="co-tech"><span>Profile</span><span>Network</span></div>
-      <div class="co-meta"><span>TYPE <b>SOCIAL</b></span><span><b>PUB</b></span><span><b>↗</b></span></div>
-    </div>
   </div>
 </section>
 
