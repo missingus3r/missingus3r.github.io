@@ -154,7 +154,7 @@ nav.main ul a .num{color:var(--ink-dimmer);margin-right:6px;font-size:10px}
 .hero{
   display:grid;grid-template-columns:1fr 380px;gap:0;
   border-bottom:1px solid var(--line-2);
-  min-height:80vh;
+  min-height:60vh;
 }
 .hero-main{padding:48px 32px 32px;position:relative;border-right:1px solid var(--line-2)}
 .hero-side{display:flex;flex-direction:column}
@@ -1159,6 +1159,7 @@ html,body{overflow-x:hidden;max-width:100vw}
 </div>
 
 <!-- TWEAKS -->
+<button id="scroll-toggle" aria-label="Scroll to top/bottom" onclick="window.scrollY<100?window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'}):window.scrollTo({top:0,behavior:'smooth'});this.textContent=window.scrollY<100?'↑ TOP':'↓ END'" style="position:fixed;right:16px;bottom:52px;z-index:9998;background:#000;border:1.5px solid var(--neon);color:var(--neon);padding:8px 14px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;cursor:pointer">↓ END</button>
 <button id="tweaks-toggle" aria-label="Toggle tweaks">⚙ TWEAKS</button>
 <div id="tweaks">
   <h6 id="tweaks-close">TWEAKS <span class="x">×</span></h6>
